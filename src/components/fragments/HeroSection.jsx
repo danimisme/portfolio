@@ -4,6 +4,7 @@ import {
   faLinkedin,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import TypeIt from "typeit-react";
 
 export default function HeroSection() {
   return (
@@ -11,14 +12,57 @@ export default function HeroSection() {
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2">
-            <h1 className="text-base font font-semibold text-primary lg:text-2xl">
-              Halo Semua 👋, saya
-              <span className="block font-bold text-2xl md:text-3xl text-dark lg:text-4xl">
-                Muhammad Subhan Ramdhani
-              </span>
+            <h1 className="block font-bold text-2xl md:text-3xl text-dark lg:text-4xl mt-4">
+              <TypeIt
+                options={{
+                  speed: 100,
+                }}
+                getBeforeInit={(instance) => {
+                  instance
+                    .type("Halo 👋, Saya")
+                    .break()
+                    .type("Muhammad&1Subhan")
+                    .pause(750)
+                    .move(-6)
+                    .pause(200)
+                    .delete(2)
+                    .pause(200)
+                    .type(" ")
+                    .move(6)
+                    .type("Ramdhani")
+                    .move(-8)
+                    .pause(200)
+                    .type(" ")
+                    .move(8)
+                    .pause(750);
+                  return instance;
+                }}
+              />
             </h1>
+
             <h2 className="font-medium text-slate-500 text-lg mb-5 lg:text-2xl mt-2">
-              Saya seorang Frontend Developer
+              <TypeIt
+                options={{ loop: true }}
+                getBeforeInit={(instance) => {
+                  instance
+                    .pause(5000)
+                    .type("Saya seorang Front-End Web Developer")
+                    .pause(250)
+                    .delete(31)
+                    .pause(200)
+                    .type("senang mempelajari hal baru")
+                    .pause(250)
+                    .delete(27)
+                    .pause(200)
+                    .type("berkomitmen pada tugas yang diberikan")
+                    .pause(250)
+                    .delete(37)
+                    .pause(200)
+                    .type("mudah beradaptasi")
+                    .pause(250);
+                  return instance;
+                }}
+              />
             </h2>
             <hr className=" border-t-4 mb-5" />
             <div className="flex gap-4 text-3xl mb-10 ml-3 text-primary">
