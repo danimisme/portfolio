@@ -6,10 +6,10 @@ export default function AboutSection() {
       <div className="container">
         <div className="flex flex-wrap justify-center">
           <div className="w-full px-4 mb-10  max-w-xl">
-            <h4 className="text-primary font-bold text-xl uppercase mb-3">
+            <h4 className="text-primary font-bold text-xl md:text-2xl uppercase mb-3">
               Tentang Saya
             </h4>
-            <p className="text-base font-medium text-secondary ">
+            <p className="text-base font-medium text-secondary md:text-lg">
               Perkenalkan nama saya Muhammad Subhan Ramdhani. Saya adalah
               lulusan S1 Teknik Informatika Universitas Indraprasta PGRI. Saya
               sangat tertarik untuk bekerja di bidang IT. Saya senang
@@ -18,7 +18,7 @@ export default function AboutSection() {
             </p>
           </div>
           <div className="w-full px-4 max-w-xl ">
-            <h3 className="text-primary font-bold text-xl uppercase mb-3">
+            <h3 className="text-primary font-bold text-xl md:text-2xl  uppercase mb-3">
               Pendidikan Terakhir
             </h3>
             <TimeLine />
