@@ -1,6 +1,7 @@
 import "./App.css";
-import DottedBackground from "./components/fragments/DottedBackground";
-import HeroSection from "./components/fragments/HeroSection";
+import AboutSection from "./components/Fragments/AboutSection";
+import DottedBackground from "./components/Fragments/DottedBackground";
+import HeroSection from "./components/Fragments/HeroSection";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <DottedBackground>
         <HeroSection />
       </DottedBackground>
+      <AboutSection />
     </>
   );
 }
