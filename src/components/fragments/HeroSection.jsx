@@ -40,7 +40,7 @@ export default function HeroSection() {
               />
             </h1>
 
-            <h2 className="font-medium text-slate-500 text-lg mb-5 lg:text-2xl mt-2">
+            <h2 className="font-medium text-secondary text-lg mb-5 lg:text-2xl mt-2">
               <TypeIt
                 options={{ loop: true }}
                 getBeforeInit={(instance) => {
@@ -101,7 +101,7 @@ export default function HeroSection() {
               <img
                 src="./images/profile-1.png"
                 alt="Muhammad Subhan"
-                className="max-w-full mx-auto"
+                className="max-w-full mx-auto mb-10"
               />
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 right-0 -z-10 md:scale-125">
                 <svg
