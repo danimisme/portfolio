@@ -4,8 +4,8 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-36">
       <div className="container">
-        <div className="flex flex-wrap justify-center">
-          <div className="w-full px-4 mb-10  max-w-xl">
+        <div className="flex flex-wrap justify-center md:gap-10">
+          <div className="w-full px-4 mb-10  max-w-xl ">
             <h4 className="text-primary font-bold text-xl md:text-2xl uppercase mb-3">
               Tentang Saya
             </h4>
