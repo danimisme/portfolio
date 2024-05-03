@@ -1,12 +1,13 @@
 import "./App.css";
+import DottedBackground from "./components/fragments/DottedBackground";
 import HeroSection from "./components/fragments/HeroSection";
 
 function App() {
   return (
     <>
-      <div>
+      <DottedBackground>
         <HeroSection />
-      </div>
+      </DottedBackground>
     </>
   );
 }
