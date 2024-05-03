@@ -1,10 +1,11 @@
 import "./App.css";
+import HeroSection from "./components/fragments/HeroSection";
 
 function App() {
   return (
     <>
       <div>
-        <h1>Hello World</h1>
+        <HeroSection />
       </div>
     </>
   );
