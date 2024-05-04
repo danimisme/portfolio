@@ -12,7 +12,7 @@ export default function TimeLineItem({ time, title, subtitle, desc }) {
       </time>
       <div className="cursor-pointer " onClick={() => setIsShow(!isShow)}>
         <div>
-          <h3 className="text-lg md:text-xl font-semibold text-gray-900 ">
+          <h3 className="text-medium md:text-xl font-semibold text-gray-900 ">
             {title}
             <span className="text-primary ml-4">
               <FontAwesomeIcon
@@ -31,7 +31,7 @@ export default function TimeLineItem({ time, title, subtitle, desc }) {
       <p
         className={`${
           isShow ? "block" : "hidden"
-        } mb-4 text-base md:text-lg font-normal text-gray-500  transition duration-300`}
+        } mb-4 text-sm md:text-lg font-normal text-gray-500  transition duration-300`}
       >
         {desc}
       </p>
