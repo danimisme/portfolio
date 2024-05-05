@@ -9,7 +9,7 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="lg:pt-30 md:pt-20 pt-16">
+    <section id="home" className="lg:pt-30 md:pt-20 pt-16">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2">

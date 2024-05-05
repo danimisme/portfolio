@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [navStyle, setNavStyle] = useState("");
+  const [activeSection, setActiveSection] = useState("home");
   window.onscroll = function () {
     if (window.scrollY >= 100 && window.scrollY < 300) {
       setNavStyle("navbar-hide");
@@ -12,6 +13,29 @@ export default function Navbar() {
       setNavStyle("navbar-show");
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ["home", "about", "portfolio", "contact"]; // Daftar ID section yang ingin dipantau
+      const scrollPosition = window.scrollY;
+
+      sections.forEach((sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const { top } = section.getBoundingClientRect();
+          if (top <= 150 && top >= -section.clientHeight) {
+            setActiveSection(sectionId); // Update state jika section terlihat di layar
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <nav
       className={`bg-transparent fixed top-0 left-0 w-full flex items-center z-10 transition duration-300 ${navStyle}`}
@@ -21,7 +45,7 @@ export default function Navbar() {
           <div className="px-4">
             <a
               href="#"
-              className={`font-bold text-lg block py-6 hover:opacity-80 text-primary`}
+              className={`font-bold text-lg block py-6 hover:opacity-80 text-primary `}
             >
               danimisme
             </a>
@@ -50,7 +74,9 @@ export default function Navbar() {
                 <li className="group  flex">
                   <a
                     href="#"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary 
+                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                      activeSection === "home" ? "active" : ""
+                    }
                     }`}
                   >
                     Beranda
@@ -59,7 +85,9 @@ export default function Navbar() {
                 <li className="group  flex">
                   <a
                     href="#about"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary 
+                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                      activeSection === "about" ? "active" : ""
+                    }
                     }`}
                   >
                     Tentang Saya
@@ -68,7 +96,9 @@ export default function Navbar() {
                 <li className="group  flex">
                   <a
                     href="#portfolio"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary 
+                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                      activeSection === "portfolio" ? "active" : ""
+                    }
                     }`}
                   >
                     Portfolio

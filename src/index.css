@@ -32,11 +32,11 @@
 }
 
 .nav-link:hover::after,
-.nav-link.on::after {
+.nav-link.active::after {
   width: 100%;
 }
 
 .nav-link:hover,
-.nav-link.on {
-  color: #bb1a08;
+.nav-link.active {
+  @apply text-primary font-semibold;
 }
