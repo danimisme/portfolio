@@ -1,4 +1,4 @@
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 
@@ -30,7 +30,7 @@ export default function TimeLineItem({ time, title, subtitle, desc }) {
       </div>
       <p
         className={`${
-          isShow ? "block" : "hidden"
+          isShow ? "block" : "absolute opacity-0 -translate-y-20 -z-10"
         } mb-4 text-sm md:text-lg font-normal text-gray-500  transition duration-300`}
       >
         {desc}
