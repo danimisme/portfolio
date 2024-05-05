@@ -10,9 +10,14 @@ export default function AboutSection() {
               Tentang Saya
             </h4>
             <p className="text-base font-medium text-secondary md:text-xl">
-              Perkenalkan nama saya Muhammad Subhan Ramdhani. Saya adalah
-              lulusan S1 Teknik Informatika Universitas Indraprasta PGRI. Saya
-              sangat tertarik untuk bekerja di bidang IT. Saya senang
+              Perkenalkan nama saya{" "}
+              <span className="text-primary font-semibold">
+                Muhammad Subhan Ramdhani
+              </span>
+              . Saya biasa dipanggil{" "}
+              <span className="text-primary font-semibold">Dani</span>. Saya
+              adalah lulusan S1 Teknik Informatika Universitas Indraprasta PGRI.
+              Saya sangat tertarik untuk bekerja di bidang IT. Saya senang
               mempelajari hal baru. Saya dapat beradaptasi dengan cepat. Saya
               selalu berkomitmen untuk menyelesaikan tugas yang telah diberikan.
             </p>
