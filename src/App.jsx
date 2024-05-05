@@ -1,4 +1,5 @@
 import "./App.css";
+import ButtonUp from "./components/Elements/ButtonUp";
 import AboutSection from "./components/Fragments/AboutSection";
 import DottedBackground from "./components/Fragments/DottedBackground";
 import HeroSection from "./components/Fragments/HeroSection";
@@ -16,6 +17,7 @@ function App() {
       <AboutSection />
       <SkillSection />
       <PortFolioSection />
+      <ButtonUp />
     </>
   );
 }
