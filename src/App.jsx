@@ -1,4 +1,5 @@
 import "./App.css";
+import SkillSection from "./components/Elements/SkillSection";
 import AboutSection from "./components/Fragments/AboutSection";
 import DottedBackground from "./components/Fragments/DottedBackground";
 import HeroSection from "./components/Fragments/HeroSection";
@@ -13,6 +14,7 @@ function App() {
         <HeroSection />
       </DottedBackground>
       <AboutSection />
+      <SkillSection />
       <PortFolioSection />
     </>
   );
