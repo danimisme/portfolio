@@ -5,7 +5,7 @@ export default function CardProject({ title, desc, img }) {
         <img
           src={img}
           alt="portfolio-image"
-          className="w-full aspect-[16/9] object-cover object-top "
+          className="w-full aspect-[16/9] object-cover object-top transition-all duration-1000 hover:object-bottom brightness-75 hover:brightness-100"
         />
       </div>
       <h3 className="font-semibold text-xl text-dark  mt-5 mb-3">{title}</h3>
