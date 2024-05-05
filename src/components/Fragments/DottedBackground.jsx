@@ -1,7 +1,7 @@
 export default function DottedBackground({ children }) {
   return (
     <div className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 bottom-0 -z-50 falling-background scale-150 sm:hidden md:block ">
+      <div className="absolute top-0 left-0 right-0 bottom-0 -z-50 falling-background scale-150 hidden md:block ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
