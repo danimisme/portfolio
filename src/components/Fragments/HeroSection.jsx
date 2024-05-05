@@ -5,10 +5,11 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import TypeIt from "typeit-react";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="lg:pt-36 md:pt-20 pt-16">
+    <section id="hero" className="lg:pt-30 md:pt-20 pt-16">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2">
@@ -101,7 +102,7 @@ export default function HeroSection() {
               <img
                 src="./images/profile-1.png"
                 alt="Muhammad Subhan"
-                className="max-w-full mx-auto mb-10"
+                className="max-w-full mx-auto mb-0"
               />
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 right-0 -z-10 md:scale-125">
                 <svg
@@ -118,6 +119,19 @@ export default function HeroSection() {
                 </svg>
               </span>
             </div>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div
+            className="bg-primary w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-300 ease-in-out animate-bounce"
+            onClick={() =>
+              window.scrollTo({
+                top: document.getElementById("about").offsetTop,
+                behavior: "smooth",
+              })
+            }
+          >
+            <FontAwesomeIcon icon={faArrowDown} className="text-white" />
           </div>
         </div>
       </div>
