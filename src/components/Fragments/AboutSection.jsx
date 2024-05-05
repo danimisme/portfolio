@@ -2,7 +2,7 @@ import TimeLine from "../Elements/TimeLine";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-36">
+    <section id="about" className="lg:py-36 md:py-20 py-16 ">
       <div className="container">
         <div className="flex flex-wrap justify-between md:gap-10">
           <div className="w-full px-4 mb-10  max-w-xl ">

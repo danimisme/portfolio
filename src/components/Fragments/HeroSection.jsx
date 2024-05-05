@@ -8,7 +8,7 @@ import TypeIt from "typeit-react";
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="pt-36">
+    <section id="hero" className="lg:pt-36 md:pt-20 pt-16">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2">
