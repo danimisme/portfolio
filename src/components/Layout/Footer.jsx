@@ -11,7 +11,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark py-12 text-slate-300 dark:bg-slate-900">
+    <footer className="bg-dark py-12 text-slate-300 dark:bg-darkgray">
       <div className="container">
         <div className="w-full flex flex-wrap lg:justify-end justify-between">
           <div className="w-full lg:w-[55%] md:w-1/2 px-4 lg:px-0 lg:text-center mb-8 lg:mb-0">
