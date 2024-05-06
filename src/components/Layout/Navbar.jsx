@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { CiDark, CiLight } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../../redux/slices/DarkModeSlice";
-import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +9,6 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("home");
   const darkMode = useSelector((state) => state.darkMode.darkMode);
   const dispatch = useDispatch();
-  console.log(darkMode);
   window.onscroll = function () {
     if (window.scrollY >= 100 && window.scrollY < 300) {
       setNavStyle("navbar-hide");
@@ -63,6 +61,11 @@ export default function Navbar() {
       });
     };
   }, [isOpen]);
+
+  const darkModeHandler = () => {
+    dispatch(toggleDarkMode());
+    document.body.classList.toggle("dark");
+  };
 
   return (
     <nav
@@ -135,13 +138,13 @@ export default function Navbar() {
             <div className="relative h-12 w-12 mb-0 lg:mb-2 mt-1 lg:mt-0 ">
               <div
                 className={`${darkMode ? `translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button `}
-                onClick={() => dispatch(toggleDarkMode())}
+                onClick={() => darkModeHandler()}
               >
                 <CiLight />
               </div>
               <div
                 className={`${!darkMode ? `-translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button `}
-                onClick={() => dispatch(toggleDarkMode())}
+                onClick={() => darkModeHandler()}
               >
                 <CiDark />
               </div>
