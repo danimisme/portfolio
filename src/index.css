@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .hamburger-line {
-  @apply w-[30px] h-[2px] my-2 block bg-dark;
+  @apply w-[30px] h-[2px] my-2 block bg-dark dark:bg-slate-300;
 }
 
 .hamburger-active > span:nth-child(1) {
@@ -21,11 +21,10 @@
 }
 
 .navbar-scrolled {
-  @apply fixed z-[9999]  bg-white bg-opacity-70 translate-y-0 opacity-100;
+  @apply fixed z-[9999]  bg-white bg-opacity-70 translate-y-0 opacity-100 backdrop-blur-sm dark:bg-dark dark:bg-opacity-50;
   box-shadow:
     0 10px 15px -3px rgb(0 0 0 / 0.1),
     0 4px 6px -4px rgb(0 0 0 / 0.1);
-  backdrop-filter: blur(5px);
 }
 
 .nav-link::after {
@@ -44,5 +43,5 @@
 }
 
 .toggle-button {
-  @apply transition duration-500 lg:border-2 text-3xl p-2 hover:bg-slate-200 rounded-full lg:mb-2 mr-4 lg:mr-0 absolute top-0 right-0;
+  @apply transition duration-500 lg:border-2 text-3xl p-2 rounded-full lg:mb-2 mr-4 lg:mr-0 absolute top-0 right-0;
 }

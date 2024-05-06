@@ -85,13 +85,13 @@ export default function Navbar() {
             <div
               className={` ${
                 isOpen ? "block" : "hidden"
-              }  absolute my-3 py-3 lg:py-0 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full overflow-hidden lg:block lg:relative lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none `}
+              }  absolute my-3 py-3 lg:py-0 bg-white dark:bg-slate-700 dark:shadow-slate-950 lg:dark:bg-transparent shadow-md rounded-lg max-w-[250px] w-full right-4 top-full overflow-hidden lg:block lg:relative lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none `}
             >
               <ul className="block lg:flex items-center ">
                 <li className="group  flex">
                   <a
                     href="#"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                    className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
                       activeSection === "home" ? "active" : ""
                     }
                     }`}
@@ -102,7 +102,7 @@ export default function Navbar() {
                 <li className="group  flex">
                   <a
                     href="#about"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                    className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
                       activeSection === "about" ? "active" : ""
                     }
                     }`}
@@ -113,7 +113,7 @@ export default function Navbar() {
                 <li className="group  flex">
                   <a
                     href="#portfolio"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                    className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
                       activeSection === "portfolio" ? "active" : ""
                     }
                     }`}
@@ -124,7 +124,7 @@ export default function Navbar() {
                 <li className="group  flex">
                   <a
                     href="#contact"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                    className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
                       activeSection === "contact" ? "active" : ""
                     }
                     }`}
@@ -137,13 +137,13 @@ export default function Navbar() {
 
             <div className="relative h-12 w-12 mb-0 lg:mb-2 mt-1 lg:mt-0 ">
               <div
-                className={`${!darkMode ? `translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button `}
+                className={`${!darkMode ? `translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button text-slate-400 hover:bg-slate-950`}
                 onClick={() => darkModeHandler()}
               >
                 <CiLight />
               </div>
               <div
-                className={`${darkMode ? `-translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button `}
+                className={`${darkMode ? `-translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button hover:bg-slate-200`}
                 onClick={() => darkModeHandler()}
               >
                 <CiDark />
