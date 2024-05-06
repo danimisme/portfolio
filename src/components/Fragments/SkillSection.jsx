@@ -2,7 +2,7 @@ import SkillItem from "../Elements/SkillItem";
 
 export default function SkillSection() {
   return (
-    <section className=" pb-16">
+    <section className=" py-16 dark:bg-dark">
       <div className="container">
         <h2 className="text-3xl font-bold text-center text-primary">
           My Skills

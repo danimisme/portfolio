@@ -4,7 +4,7 @@ export default function SkillItem({ title, icon }) {
       <div className="w-20 h-20 group-hover:animate-bounce duration-300">
         <img src={icon} alt="" />
       </div>
-      <p className="text-lg font-semibold text-dark text-center mt-3 cursor-context-menu group-hover:font-bold group-hover:text-xl">
+      <p className="text-lg font-semibold text-dark text-center mt-3 cursor-context-menu group-hover:font-bold group-hover:text-xl dark:text-gray-400 group-hover:dark:text-white">
         {title}
       </p>
     </div>
