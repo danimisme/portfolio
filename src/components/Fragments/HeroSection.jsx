@@ -9,11 +9,11 @@ import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroSection() {
   return (
-    <section id="home" className="lg:pt-30 md:pt-20 pt-16">
+    <section id="home" className="lg:pt-30 md:pt-20 pt-16 dark:bg-dark ">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2">
-            <h1 className="block font-bold text-2xl md:text-3xl text-dark lg:text-4xl mt-4">
+            <h1 className="block font-bold text-2xl md:text-3xl text-dark dark:text-white lg:text-4xl mt-4">
               <TypeIt
                 options={{
                   speed: 100,
@@ -102,9 +102,9 @@ export default function HeroSection() {
               <img
                 src="./images/profile-1.png"
                 alt="Muhammad Subhan"
-                className="max-w-full mx-auto mb-0"
+                className="max-w-full mx-auto mb-0 relative z-10"
               />
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 right-0 -z-10 md:scale-125">
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 right-0  md:scale-125">
                 <svg
                   width={400}
                   height={400}
