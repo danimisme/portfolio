@@ -7,10 +7,11 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { RiTailwindCssFill } from "react-icons/ri";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark py-12 text-slate-300">
+    <footer className="bg-dark py-12 text-slate-300 dark:bg-slate-900">
       <div className="container">
         <div className="w-full flex flex-wrap lg:justify-end justify-between">
           <div className="w-full lg:w-[55%] md:w-1/2 px-4 lg:px-0 lg:text-center mb-8 lg:mb-0">
@@ -20,7 +21,11 @@ export default function Footer() {
               <span className="inline-block ml-2 mr-1">
                 <FontAwesomeIcon icon={faReact} />
               </span>
-              React.js and Tailwind CSS
+              React.js and
+              <span className="inline-block ml-2 mr-1">
+                <RiTailwindCssFill />
+              </span>
+              Tailwind CSS
             </p>
             <p className="text-md mb-2">© 2024 - Muhammad Subhan Ramdhani</p>
             <div className=" mt-4 ">
