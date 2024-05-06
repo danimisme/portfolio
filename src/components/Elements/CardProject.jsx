@@ -1,6 +1,6 @@
 export default function CardProject({ title, desc, img, techStack }) {
   return (
-    <div className="mb-12 p-3 md:p-6 md:w-1/2 lg:w-1/3 group hover:cursor-pointer hover:shadow-lg hover:bg-slate-300 hover:-translate-y-2 duration-300">
+    <div className="mb-12 p-3 md:p-6 md:w-1/2 lg:w-1/3 group hover:cursor-pointer hover:shadow-lg hover:bg-slate-300 dark:hover:bg-slate-800 dark:hover:shadow-lg hover:-translate-y-2 duration-300">
       <div className="rounded-md shadow-md overflow-hidden relative">
         <img
           src={img}
@@ -11,7 +11,9 @@ export default function CardProject({ title, desc, img, techStack }) {
           View
         </button>
       </div>
-      <h3 className="font-semibold text-xl text-dark  mt-5 mb-3">{title}</h3>
+      <h3 className="font-semibold text-xl text-dark dark:text-slate-300  mt-5 mb-3">
+        {title}
+      </h3>
       <h2 className="font-semibold text-base text-secondary">
         Tech Stack :
         {techStack && (
