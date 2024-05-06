@@ -62,11 +62,6 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
-  const darkModeHandler = () => {
-    dispatch(toggleDarkMode());
-    document.body.classList.toggle("dark");
-  };
-
   return (
     <nav
       className={`bg-transparent fixed top-0 left-0 w-full flex items-center z-10 transition duration-300 ${navStyle}`}
@@ -138,13 +133,13 @@ export default function Navbar() {
             <div className="relative h-12 w-12 mb-0 lg:mb-2 mt-1 lg:mt-0 ">
               <div
                 className={`${!darkMode ? `translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button text-white hover:bg-slate-950`}
-                onClick={() => darkModeHandler()}
+                onClick={() => dispatch(toggleDarkMode())}
               >
                 <CiLight />
               </div>
               <div
                 className={`${darkMode ? `-translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button hover:bg-slate-200`}
-                onClick={() => darkModeHandler()}
+                onClick={() => dispatch(toggleDarkMode())}
               >
                 <CiDark />
               </div>
