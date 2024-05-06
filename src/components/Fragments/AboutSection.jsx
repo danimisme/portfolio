@@ -2,14 +2,14 @@ import TimeLine from "../Elements/TimeLine";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="lg:pt-36 md:pt-20  pt-20 pb-16">
+    <section id="about" className="lg:pt-36 md:pt-20 pt-20 pb-16 dark:bg-dark">
       <div className="container">
         <div className="flex flex-wrap justify-between md:gap-10">
           <div className="w-full px-4 mb-10  max-w-xl ">
             <h4 className="text-primary font-bold text-xl md:text-2xl uppercase mb-3">
               Tentang Saya
             </h4>
-            <p className="text-base font-medium text-secondary md:text-xl">
+            <p className="text-base font-medium text-secondary dark:text-slate-300 md:text-xl">
               Perkenalkan nama saya{" "}
               <span className="text-primary font-semibold">
                 Muhammad Subhan Ramdhani
