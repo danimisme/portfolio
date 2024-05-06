@@ -4,7 +4,7 @@ export default function PortFolioSection() {
   return (
     <section
       id="portfolio"
-      className="pt-36 pb-16 bg-slate-200 dark:bg-slate-900"
+      className="pt-36 pb-16 bg-slate-200 dark:bg-darkgray"
     >
       <div className="container">
         <div className="w-full px-4">
