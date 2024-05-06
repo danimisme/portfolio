@@ -4,7 +4,7 @@ import TextArea from "./TextArea";
 
 export default function InputForm({ type, name, label, ...props }) {
   return (
-    <div className="w-full relative z-0 mx-4 mb-8">
+    <div className="w-full relative z-0 mb-8">
       {type === "textarea" ? (
         <TextArea name={name} {...props} />
       ) : (

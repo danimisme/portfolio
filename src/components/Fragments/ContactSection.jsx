@@ -12,14 +12,9 @@ export default function ContactSection() {
             <h2 className="font-bold text-dark text-3xl md:text-4xl mb-4">
               Hubungi Saya
             </h2>
-            <p className="text-md font-medium text-secondary">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A et
-              aliquid possimus iure corrupti obcaecati quod sunt eligendi
-              tenetur non!
-            </p>
           </div>
         </div>
-        <div className="w-full md:w-2/3 mx-auto">
+        <div className="w-full md:w-2/3 mx-auto px-4">
           <form action="">
             <InputForm name="name" label="Name" placeholder=" " />
             <InputForm
@@ -34,7 +29,7 @@ export default function ContactSection() {
               label="Message"
               placeholder=" "
             />
-            <button className="bg-primary text-white px-5 py-3 rounded-lg mx-4 hover:opacity-80 hover:shadow-md transition duration-300">
+            <button className="bg-primary text-white px-5 py-3 rounded-lg  hover:opacity-80 hover:shadow-md transition duration-300">
               Kirim
             </button>
           </form>
