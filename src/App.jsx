@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux";
 import "./App.css";
 import ButtonUp from "./components/Elements/ButtonUp";
 import AboutSection from "./components/Fragments/AboutSection";
@@ -8,8 +9,17 @@ import SkillSection from "./components/Fragments/SkillSection";
 import FloatingBackgrund from "./components/Layout/FloatingBackgrund";
 import Footer from "./components/Layout/Footer";
 import Navbar from "./components/Layout/Navbar";
+import { useEffect } from "react";
 
 function App() {
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  });
   return (
     <>
       <Navbar />
