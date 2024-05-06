@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { CiLight } from "react-icons/ci";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,8 +39,13 @@ export default function Navbar() {
   useEffect(() => {
     const navbarToggle = document.getElementById("navbar-toggle");
     const closeNavbar = (e) => {
-      if (e.target !== navbarToggle) {
-        setIsOpen(false);
+      if (isOpen) {
+        if (
+          e.target !== navbarToggle &&
+          e.target !== navbarToggle.children[0]
+        ) {
+          setIsOpen(false);
+        }
       }
     };
     window.addEventListener("click", function (e) {
@@ -50,7 +56,7 @@ export default function Navbar() {
         closeNavbar(e);
       });
     };
-  });
+  }, [isOpen]);
 
   return (
     <nav
@@ -67,20 +73,6 @@ export default function Navbar() {
             </a>
           </div>
           <div className="flex items-center px-4">
-            <button
-              id="navbar-toggle"
-              name="navbar-toggle"
-              type="button"
-              className={`block absolute right-4 lg:hidden ${
-                isOpen ? "hamburger-active" : ""
-              }`}
-              onClick={() => setIsOpen(!isOpen)}
-            >
-              <span className="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-              <span className="hamburger-line transition duration-300 ease-in-out"></span>
-              <span className="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
-            </button>
-
             <div
               className={` ${
                 isOpen ? "block" : "hidden"
@@ -133,6 +125,20 @@ export default function Navbar() {
                 </li>
               </ul>
             </div>
+            <div className=" lg:border-2 text-3xl p-2 hover:bg-slate-200 rounded-full lg:mb-2 mr-4 lg:mr-0 ">
+              <CiLight />
+            </div>
+            <button
+              id="navbar-toggle"
+              name="navbar-toggle"
+              type="button"
+              className={`block  lg:hidden ${isOpen ? "hamburger-active" : ""}`}
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <span className="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
+              <span className="hamburger-line transition duration-300 ease-in-out"></span>
+              <span className="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+            </button>
           </div>
         </div>
       </div>

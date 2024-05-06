@@ -22,7 +22,9 @@
 
 .navbar-scrolled {
   @apply fixed z-[9999]  bg-white bg-opacity-70 translate-y-0 opacity-100;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  box-shadow:
+    0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
   backdrop-filter: blur(5px);
 }
 
