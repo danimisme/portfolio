@@ -29,7 +29,7 @@
 }
 
 .nav-link::after {
-  @apply block w-0 h-[2px] mt-1 transition-all ease-out duration-300 bg-primary;
+  @apply block w-0 h-[2px] mt-1 transition-all ease-out duration-500 bg-primary;
   content: "";
 }
 
@@ -41,4 +41,8 @@
 .nav-link:hover,
 .nav-link.active {
   @apply text-primary font-semibold;
+}
+
+.toggle-button {
+  @apply transition duration-500 lg:border-2 text-3xl p-2 hover:bg-slate-200 rounded-full lg:mb-2 mr-4 lg:mr-0 absolute top-0 right-0;
 }

@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
-import { CiLight } from "react-icons/ci";
+import { CiDark, CiLight } from "react-icons/ci";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleDarkMode } from "../../redux/slices/DarkModeSlice";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [navStyle, setNavStyle] = useState("");
   const [activeSection, setActiveSection] = useState("home");
+  const darkMode = useSelector((state) => state.darkMode.darkMode);
+  const dispatch = useDispatch();
+  console.log(darkMode);
   window.onscroll = function () {
     if (window.scrollY >= 100 && window.scrollY < 300) {
       setNavStyle("navbar-hide");
@@ -76,7 +82,7 @@ export default function Navbar() {
             <div
               className={` ${
                 isOpen ? "block" : "hidden"
-              }  absolute my-3 py-3 lg:py-0 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full overflow-hidden lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none `}
+              }  absolute my-3 py-3 lg:py-0 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full overflow-hidden lg:block lg:relative lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none `}
             >
               <ul className="block lg:flex items-center ">
                 <li className="group  flex">
@@ -125,9 +131,22 @@ export default function Navbar() {
                 </li>
               </ul>
             </div>
-            <div className=" lg:border-2 text-3xl p-2 hover:bg-slate-200 rounded-full lg:mb-2 mr-4 lg:mr-0 ">
-              <CiLight />
+
+            <div className="relative h-12 w-12 mb-0 lg:mb-2 mt-1 lg:mt-0 ">
+              <div
+                className={`${darkMode ? `translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button `}
+                onClick={() => dispatch(toggleDarkMode())}
+              >
+                <CiLight />
+              </div>
+              <div
+                className={`${!darkMode ? `-translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button `}
+                onClick={() => dispatch(toggleDarkMode())}
+              >
+                <CiDark />
+              </div>
             </div>
+
             <button
               id="navbar-toggle"
               name="navbar-toggle"
