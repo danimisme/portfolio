@@ -3,7 +3,7 @@ section.bg {
   position: absolute;
   min-height: 100%;
   overflow: hidden;
-  z-index: -100;
+  z-index: 0;
 }
 
 ul.shape {
