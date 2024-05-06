@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { darkModeSlice } from "./slices/DarkModeSlice";
 
-const state = configureStore({
+const store = configureStore({
   reducer: {
     darkMode: darkModeSlice.reducer,
   },
 });
 
-export default state;
+export default store;
