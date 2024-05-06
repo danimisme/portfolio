@@ -35,6 +35,23 @@ export default function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    const navbarToggle = document.getElementById("navbar-toggle");
+    const closeNavbar = (e) => {
+      if (e.target !== navbarToggle) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener("click", function (e) {
+      closeNavbar(e);
+    });
+    return () => {
+      window.removeEventListener("click", function (e) {
+        closeNavbar(e);
+      });
+    };
+  });
+
   return (
     <nav
       className={`bg-transparent fixed top-0 left-0 w-full flex items-center z-10 transition duration-300 ${navStyle}`}
