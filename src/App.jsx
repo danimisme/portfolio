@@ -3,6 +3,7 @@ import ButtonUp from "./components/Elements/ButtonUp";
 import AboutSection from "./components/Fragments/AboutSection";
 import ContactSection from "./components/Fragments/ContactSection";
 import DottedBackground from "./components/Fragments/DottedBackground";
+import Footer from "./components/Fragments/Footer";
 import HeroSection from "./components/Fragments/HeroSection";
 import PortFolioSection from "./components/Fragments/PortFolioSection";
 import SkillSection from "./components/Fragments/SkillSection";
@@ -20,6 +21,7 @@ function App() {
       <PortFolioSection />
       <ButtonUp />
       <ContactSection />
+      <Footer />
     </>
   );
 }
