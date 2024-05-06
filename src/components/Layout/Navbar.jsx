@@ -17,7 +17,6 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "about", "portfolio", "contact"]; // Daftar ID section yang ingin dipantau
-      const scrollPosition = window.scrollY;
 
       sections.forEach((sectionId) => {
         const section = document.getElementById(sectionId);
@@ -107,7 +106,9 @@ export default function Navbar() {
                 <li className="group  flex">
                   <a
                     href="#contact"
-                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary 
+                    className={`nav-link text-base text-dark py-2 mx-8 group-hover:text-primary ${
+                      activeSection === "contact" ? "active" : ""
+                    }
                     }`}
                   >
                     Contact
