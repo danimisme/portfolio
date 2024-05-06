@@ -13,7 +13,7 @@ export default function Footer() {
     <footer className="bg-dark py-12 text-slate-300">
       <div className="container">
         <div className="w-full flex flex-wrap lg:justify-end justify-between">
-          <div className="w-full lg:w-[55%] md:w-1/2 px-4 lg:px-0 text-center">
+          <div className="w-full lg:w-[55%] md:w-1/2 px-4 lg:px-0 lg:text-center mb-8 lg:mb-0">
             <p className=" mb-2 text-2xl text-white font-semibold">danimisme</p>
             <p className="text-md mb-2">
               Built using
