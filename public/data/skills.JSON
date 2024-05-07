@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "title": "HTML",
+      "icon": "./icons/html.png"
+    },
+    {
+      "id": 2,
+      "title": "CSS",
+      "icon": "./icons/css.png"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript",
+      "icon": "./icons/js.png"
+    },
+    {
+      "id": 4,
+      "title": "React JS",
+      "icon": "./icons/reactjs.png"
+    },
+    {
+      "id": 5,
+      "title": "Next JS",
+      "icon": "./icons/nextjs.png"
+    },
+    {
+      "id": 6,
+      "title": "Redux",
+      "icon": "./icons/redux.png"
+    },
+    {
+      "id": 7,
+      "title": "Tailwind CSS",
+      "icon": "./icons/tailwindcss.png"
+    },
+    {
+      "id": 8,
+      "title": "Bootstrap",
+      "icon": "./icons/bootstrap.png"
+    }
+  ]
+  
