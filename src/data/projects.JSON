@@ -9,7 +9,15 @@
         "./icons/axios.png"
       ],
       "desc": "Memanfaatkan data dari travel API dibimbing.id, admin dapat mengakses dashboard dan dapat melakukan CRUD data promo, activty, banner,profile dan mengupdate role user.",
-      "img": "./portfolio-images/kelana.png"
+      "repository" : "https://github.com/danimisme/kelana-travel",
+      "link": "https://kelana-travel.vercel.app/",
+      "img": [
+        "./portfolio-images/kelana.png",
+        "./portfolio-images/kelana-login.png",
+        "./portfolio-images/kelana-dashboard.png",
+        "./portfolio-images/kelana-activity.png",
+        "./portfolio-images/kelana-register.png"
+    ]
     },
     {
       "id": 2,
@@ -20,7 +28,14 @@
         "./icons/axios.png"
       ],
       "desc": "Sebuah website food yang mengambil data dari food API dibimbing.id . user dapat melakukan CRUD menu food.",
-      "img": "./portfolio-images/dibimbing-food.png"
+      "repository" : "https://github.com/danimisme/dibimbing-food",
+      "link": "https://dibimbing-food.vercel.app/",
+      "img": [
+        "./portfolio-images/dibimbing-food.png",
+        "./portfolio-images/dibimbing-food2.png",
+        "./portfolio-images/dibimbing-food3.png",
+        "./portfolio-images/dibimbing-food4.png"
+      ]
     },
     {
       "id": 3,
@@ -30,7 +45,13 @@
         "./icons/bootstrap.png"
       ],
       "desc": "Sebuah website landing page diminum caffe. menampilkan homepage diminum caffe, tentang diminum caffe, dan menu diminum caffe.",
-      "img": "./portfolio-images/diminum-caffe.png"
+      "repository" : "https://github.com/danimisme/Mini-Project-Using-React",
+      "link": "https://diminum-caffe.vercel.app/menu",
+      "img": [
+        "./portfolio-images/diminum-caffe.png",
+        "./portfolio-images/diminum-caffe2.png",
+        "./portfolio-images/diminum-caffe3.png"
+      ]
     },
     {
       "id": 4,
@@ -41,7 +62,13 @@
         "./icons/js.png"
       ],
       "desc": "Memanfaatkan local Storage untuk menyimpan data. user dapat menambahkan buku, mengedit buku, dan menghapus buku.",
-      "img": "./portfolio-images/bookshelf-app.png"
+      "repository" : "https://github.com/danimisme/bookshelf-app",
+      "link": "https://bookshelf-app-tawny.vercel.app/",
+      "img": [
+        "./portfolio-images/bookshelf-app.png",
+        "./portfolio-images/bookshelf-app2.png",
+        "./portfolio-images/bookshelf-app3.png"
+      ]
     }
   ]
   
