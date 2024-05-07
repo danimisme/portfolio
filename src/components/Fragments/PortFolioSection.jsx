@@ -38,14 +38,8 @@ export default function PortFolioSection() {
           </div>
         </div>
         <div className="w-full px-4 flex flex-wrap justify-center">
-          {projects.map((project, index) => (
-            <CardProject
-              key={index}
-              title={project.title}
-              desc={project.desc}
-              img={project.img}
-              techStack={project.techStack}
-            />
+          {projects.map((project) => (
+            <CardProject key={project.id} project={project} />
           ))}
         </div>
       </div>

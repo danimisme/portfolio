@@ -1,4 +1,5 @@
-export default function CardProject({ title, desc, img, techStack }) {
+export default function CardProject({ project }) {
+  const { id, title, desc, img, techStack } = project;
   return (
     <div className="mb-12 p-3 md:p-6 md:w-1/2 lg:w-1/3 group hover:cursor-pointer hover:shadow-lg hover:bg-slate-300 dark:hover:bg-slate-800 dark:hover:shadow-lg hover:-translate-y-2 duration-300">
       <div className="rounded-md shadow-md overflow-hidden relative">
