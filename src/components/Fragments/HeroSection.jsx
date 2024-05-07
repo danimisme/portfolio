@@ -5,14 +5,14 @@ import {
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import TypeIt from "typeit-react";
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 export default function HeroSection() {
   return (
     <section id="home" className="lg:pt-30 md:pt-20 pt-16 dark:bg-dark ">
       <div className="container">
         <div className="flex flex-wrap">
-          <div className="w-full self-center px-4 lg:w-1/2">
+          <div className="w-full self-center px-4 lg:w-1/2 relative">
             <h1 className="block font-bold text-2xl md:text-3xl text-dark dark:text-white lg:text-4xl mt-4">
               <TypeIt
                 options={{
@@ -69,23 +69,32 @@ export default function HeroSection() {
             <div className="flex gap-4 text-3xl mb-10 ml-3 text-primary">
               <a
                 href="https://api.whatsapp.com/send/?phone=628979761661&text&type=phone_number&app_absent=0"
-                className=" group "
+                className="group"
+                target="_blank"
               >
                 <FontAwesomeIcon
                   icon={faWhatsapp}
-                  className="group-hover:text-dark group-hover:-translate-y-3 transition duration-300 ease-in-out"
+                  className="group-hover:text-dark  dark:hover:text-white group-hover:-translate-y-3 transition duration-300 ease-in-out"
                 />
               </a>
-              <a href="" className="group">
+              <a
+                href="mailto:msubhanr53@gmail.com"
+                className="group"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                  className="group-hover:text-dark dark:hover:text-white  group-hover:-translate-y-3 transition duration-300 ease-in-out"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/msubhanr/"
+                className="group"
+                target="_blank"
+              >
                 <FontAwesomeIcon
                   icon={faLinkedin}
-                  className="group-hover:text-dark group-hover:-translate-y-3 transition duration-300 ease-in-out"
-                />
-              </a>
-              <a href="" className="group">
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  className="group-hover:text-dark group-hover:-translate-y-3 transition duration-300 ease-in-out"
+                  className="group-hover:text-dark  dark:hover:text-white group-hover:-translate-y-3 transition duration-300 ease-in-out"
                 />
               </a>
             </div>
