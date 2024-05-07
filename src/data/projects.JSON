@@ -1,0 +1,43 @@
+[
+    {
+      "title": "Kelana Travel Web",
+      "techStack": [
+        "./icons/reactjs.png",
+        "./icons/tailwindcss.png",
+        "./icons/redux.png",
+        "./icons/axios.png"
+      ],
+      "desc": "Memanfaatkan data dari travel API dibimbing.id, admin dapat mengakses dashboard dan dapat melakukan CRUD data promo, activty, banner,profile dan mengupdate role user.",
+      "img": "./portfolio-images/kelana.png"
+    },
+    {
+      "title": "Dibimbing food",
+      "techStack": [
+        "./icons/nextjs.png",
+        "./icons/tailwindcss.png",
+        "./icons/axios.png"
+      ],
+      "desc": "Sebuah website food yang mengambil data dari food API dibimbing.id . user dapat melakukan CRUD menu food.",
+      "img": "./portfolio-images/dibimbing-food.png"
+    },
+    {
+      "title": "Diminum Caffe",
+      "techStack": [
+        "./icons/reactjs.png",
+        "./icons/bootstrap.png"
+      ],
+      "desc": "Sebuah website landing page diminum caffe. menampilkan homepage diminum caffe, tentang diminum caffe, dan menu diminum caffe.",
+      "img": "./portfolio-images/diminum-caffe.png"
+    },
+    {
+      "title": "Bookshelf Apps Web",
+      "techStack": [
+        "./icons/html.png",
+        "./icons/css.png",
+        "./icons/js.png"
+      ],
+      "desc": "Memanfaatkan local Storage untuk menyimpan data. user dapat menambahkan buku, mengedit buku, dan menghapus buku.",
+      "img": "./portfolio-images/bookshelf-app.png"
+    }
+  ]
+  
