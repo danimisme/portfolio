@@ -1,10 +1,16 @@
+import { useDispatch } from "react-redux";
+import { openProjectModal } from "../../redux/slices/ProjectModalSlice";
 export default function CardProject({ project }) {
   const { id, title, desc, img, techStack } = project;
+  const dispatch = useDispatch();
   return (
-    <div className="mb-12 p-3 md:p-6 md:w-1/2 lg:w-1/3 group hover:cursor-pointer hover:shadow-lg hover:bg-slate-300 dark:hover:bg-slate-800 dark:hover:shadow-lg hover:-translate-y-2 duration-300">
+    <div
+      className="mb-12 p-3 md:p-6 md:w-1/2 lg:w-1/3 group hover:cursor-pointer hover:shadow-lg hover:bg-slate-300 dark:hover:bg-slate-800 dark:hover:shadow-lg hover:-translate-y-2 duration-300"
+      onClick={() => dispatch(openProjectModal(project))}
+    >
       <div className="rounded-md shadow-md overflow-hidden relative">
         <img
-          src={img}
+          src={img[0]}
           alt="portfolio-image"
           className="w-full aspect-[16/9] object-cover object-top transition-all duration-1000 group-hover:object-bottom brightness-100 group-hover:brightness-75 "
         />
@@ -30,7 +36,9 @@ export default function CardProject({ project }) {
           </span>
         )}
       </h2>
-      <p className="font-medium text-base text-secondary">{desc}</p>
+      <p className="font-medium text-base text-secondary">
+        {desc.length > 50 ? `${desc.slice(0, 50)}... Lihat Selengkapnya` : desc}
+      </p>
     </div>
   );
 }
