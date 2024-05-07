@@ -68,12 +68,17 @@ export default function Navbar() {
     >
       <div className="container">
         <div className="flex items-center justify-between relative">
-          <div className="px-4">
+          <div className="px-4 flex place-items-center">
+            <img
+              src="/icons/d.png"
+              alt="d"
+              className="h-8 inline-block pb-1 mr-[3px]"
+            />
             <a
               href="#"
-              className={`font-bold text-lg block py-6 hover:opacity-80 text-primary `}
+              className={`font-bold  text-3xl block py-1 hover:opacity-80 text-primary tracking-widest `}
             >
-              danimisme
+              <span className="text-blue-500">anS</span>
             </a>
           </div>
           <div className="flex items-center px-4">
