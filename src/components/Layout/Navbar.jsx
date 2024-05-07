@@ -131,18 +131,18 @@ export default function Navbar() {
             </div>
 
             <div className="relative h-12 w-12 mb-0 lg:mb-2 mt-1 lg:mt-0 ">
-              <div
+              <button
                 className={`${!darkMode ? `translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button text-white hover:bg-slate-950`}
                 onClick={() => dispatch(toggleDarkMode())}
               >
                 <CiLight />
-              </div>
-              <div
+              </button>
+              <button
                 className={`${darkMode ? `-translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button hover:bg-slate-200`}
                 onClick={() => dispatch(toggleDarkMode())}
               >
                 <CiDark />
-              </div>
+              </button>
             </div>
 
             <button
