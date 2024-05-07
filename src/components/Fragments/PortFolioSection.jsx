@@ -1,6 +1,7 @@
 import CardProject from "../Elements/CardProject";
 import { useState } from "react";
 import { useEffect } from "react";
+import DetailProjectModal from "./DetailProjectModal";
 
 export default function PortFolioSection() {
   const [projects, setProjects] = useState([]);
@@ -42,6 +43,7 @@ export default function PortFolioSection() {
             <CardProject key={project.id} project={project} />
           ))}
         </div>
+        <DetailProjectModal />
       </div>
     </section>
   );
