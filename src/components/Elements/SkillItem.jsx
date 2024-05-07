@@ -1,6 +1,16 @@
-export default function SkillItem({ title, icon }) {
+import { useEffect } from "react";
+import animationAOS from "../../AOS/setting";
+export default function SkillItem({ skill }) {
+  const { id, title, icon } = skill;
+  useEffect(() => {
+    animationAOS();
+  }, []);
   return (
-    <div className="flex flex-col items-center mb-10 md:w-1/4 w-1/3 group">
+    <div
+      className="flex flex-col items-center mb-10 md:w-1/4 w-1/3 group"
+      data-aos="fade-up"
+      data-aos-delay={id * 100}
+    >
       <div className="w-20 h-20 group-hover:animate-bounce duration-300">
         <img src={icon} alt="" />
       </div>
