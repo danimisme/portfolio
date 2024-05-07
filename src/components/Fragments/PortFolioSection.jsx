@@ -10,7 +10,7 @@ export default function PortFolioSection() {
   }, []);
   const fetchProjects = async () => {
     try {
-      const response = await fetch("/src/data/projects.JSON");
+      const response = await fetch("/data/projects.JSON");
       const data = await response.json();
       console.log(data);
       setProjects(data);
