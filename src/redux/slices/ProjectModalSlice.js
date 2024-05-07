@@ -15,7 +15,6 @@ export const projectModalSlice = createSlice({
     },
     closeProjectModal: (state) => {
       state.isOpen = false;
-      state.project = {};
     },
   },
 });
