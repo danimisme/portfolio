@@ -1,18 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faInstagram,
-  faLinkedin,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import TypeIt from "typeit-react";
-import {
-  faArrowDown,
-  faEnvelope,
-  faGift,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
+import animationAOS from "../../AOS/setting";
 
 export default function HeroSection() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    animationAOS();
+  });
   return (
     <section id="home" className="lg:pt-30 md:pt-20 pt-16 dark:bg-dark ">
       <div className="container">
@@ -117,13 +114,18 @@ export default function HeroSection() {
                 src="./images/profile-1.png"
                 alt="Muhammad Subhan"
                 className="max-w-full mx-auto mb-0 relative z-10"
+                data-aos="fade-up"
+                data-aos-duration="1000"
               />
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 right-0  md:scale-125">
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 right-0 opacity-50 md:scale-125 ">
                 <svg
                   width={400}
                   height={400}
                   viewBox="0 0 200 200"
                   xmlns="http://www.w3.org/2000/svg"
+                  data-aos="fade-up"
+                  data-aos-duration="3000"
+                  data-aos-delay="1500"
                 >
                   <path
                     fill="#0369a1"
