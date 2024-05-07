@@ -1,6 +1,22 @@
+import { useEffect } from "react";
 import SkillItem from "../Elements/SkillItem";
+import { useState } from "react";
 
 export default function SkillSection() {
+  const [dataSkills, setDataSkills] = useState([]);
+  async function getDataSkills() {
+    try {
+      const response = await fetch("/data/skills.JSON");
+      const data = await response.json();
+      setDataSkills(data);
+    } catch (error) {
+      console.error("Error fetching skills:", error);
+    }
+  }
+
+  useEffect(() => {
+    getDataSkills();
+  }, []);
   return (
     <section className=" py-16 dark:bg-dark">
       <div className="container">
@@ -8,14 +24,9 @@ export default function SkillSection() {
           My Skills
         </h2>
         <div className="flex flex-wrap mt-16 justify-center ">
-          <SkillItem title="HTML" icon="./icons/html.png" />
-          <SkillItem title="CSS" icon="./icons/css.png" />
-          <SkillItem title="JavaScript" icon="./icons/js.png" />
-          <SkillItem title="React JS" icon="./icons/reactjs.png" />
-          <SkillItem title="Next JS" icon="./icons/nextjs.png" />
-          <SkillItem title="Redux" icon="./icons/redux.png" />
-          <SkillItem title="Tailwind CSS" icon="./icons/tailwindcss.png" />
-          <SkillItem title="Bootstrap" icon="./icons/bootstrap.png" />
+          {dataSkills.map((skill) => (
+            <SkillItem key={skill.id} skill={skill} />
+          ))}
         </div>
       </div>
     </section>
