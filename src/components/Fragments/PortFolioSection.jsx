@@ -2,10 +2,11 @@ import CardProject from "../Elements/CardProject";
 import { useState } from "react";
 import { useEffect } from "react";
 import DetailProjectModal from "./DetailProjectModal";
-
+import animationAOS from "../../AOS/setting";
 export default function PortFolioSection() {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
+    animationAOS();
     fetchProjects();
   }, []);
   const fetchProjects = async () => {
@@ -25,7 +26,11 @@ export default function PortFolioSection() {
     >
       <div className="container">
         <div className="w-full px-4">
-          <div className="max-w-xl mx-auto text-center mb-16">
+          <div
+            className="max-w-xl mx-auto text-center mb-16"
+            data-aos="fade-up"
+            data-aos-duration="300"
+          >
             <h4 className="text-primary font-semibold text-lg md:text-xl mb-3">
               Portfolio
             </h4>
