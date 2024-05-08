@@ -45,3 +45,15 @@
 .toggle-button {
   @apply transition duration-500 lg:border-2 text-3xl p-2 rounded-full lg:mb-2 mr-4 lg:mr-0 absolute top-0 right-0;
 }
+
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary;
+}
