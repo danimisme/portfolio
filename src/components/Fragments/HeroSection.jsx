@@ -7,7 +7,6 @@ import animationAOS from "../../AOS/setting";
 
 export default function HeroSection() {
   useEffect(() => {
-    window.scrollTo(0, 0);
     animationAOS();
   });
   return (

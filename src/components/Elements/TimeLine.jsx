@@ -13,7 +13,6 @@ export default function TimeLine() {
       console.error("Error fetching studies:", error);
     }
   }
-  console.log(studies);
 
   useEffect(() => {
     getStudies();
