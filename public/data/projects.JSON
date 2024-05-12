@@ -39,6 +39,24 @@
   },
   {
     "id": 3,
+    "title": "Contact App",
+    "techStack": [
+      "./icons/node-js.png",
+      "./icons/express-js.png",
+      "./icons/ejs.png",
+      "./icons/mongo-db.png"
+    ],
+    "desc": "Contact App adalah sebuah website yang dibuat untuk membantu menyimpan contact dengan mudah. Contact app dibuat menggunakan Node JS, Express JS, EJS dan Mongo DB sebagai studi kasus saya. ",
+    "repository" : "https://github.com/danimisme/contact-app",
+    "link": "https://contact-app-nine-omega.vercel.app/" ,
+    "img": [
+      "./portfolio-images/contact-app.png",
+      "./portfolio-images/contact-app2.png",
+      "./portfolio-images/contact-app3.png"
+    ]
+  },
+  {
+    "id": 4,
     "title": "Diminum Caffe",
     "techStack": [
       "./icons/reactjs.png",
@@ -54,7 +72,7 @@
     ]
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Bookshelf Apps Web",
     "techStack": [
       "./icons/html.png",
