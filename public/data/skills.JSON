@@ -1,43 +1,62 @@
 [
-    {
-      "id": 1,
-      "title": "HTML",
-      "icon": "./icons/html.png"
-    },
-    {
-      "id": 2,
-      "title": "CSS",
-      "icon": "./icons/css.png"
-    },
-    {
-      "id": 3,
-      "title": "JavaScript",
-      "icon": "./icons/js.png"
-    },
-    {
-      "id": 4,
-      "title": "React JS",
-      "icon": "./icons/reactjs.png"
-    },
-    {
-      "id": 5,
-      "title": "Next JS",
-      "icon": "./icons/nextjs.png"
-    },
-    {
-      "id": 6,
-      "title": "Redux",
-      "icon": "./icons/redux.png"
-    },
-    {
-      "id": 7,
-      "title": "Tailwind CSS",
-      "icon": "./icons/tailwindcss.png"
-    },
-    {
-      "id": 8,
-      "title": "Bootstrap",
-      "icon": "./icons/bootstrap.png"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "HTML",
+    "icon": "./icons/html.png"
+  },
+  {
+    "id": 2,
+    "title": "CSS",
+    "icon": "./icons/css.png"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript",
+    "icon": "./icons/js.png"
+  },
+  {
+    "id": 4,
+    "title": "React JS",
+    "icon": "./icons/reactjs.png"
+  },
+  {
+    "id": 5,
+    "title": "Express JS",
+    "icon": "./icons/express-js.png"
+  },
+  {
+    "id": 6,
+    "title": "Node JS",
+    "icon": "./icons/node-js.png"
+  },
+  {
+    "id": 7,
+    "title": "EJS",
+    "icon": "./icons/ejs.png"
+  },
+  {
+    "id": 8,
+    "title": "Next JS",
+    "icon": "./icons/nextjs.png"
+  },
+  {
+    "id": 9,
+    "title": "Redux",
+    "icon": "./icons/redux.png"
+  },
+  {
+    "id": 10,
+    "title": "Tailwind CSS",
+    "icon": "./icons/tailwindcss.png"
+  },
+  {
+    "id": 11,
+    "title": "Bootstrap",
+    "icon": "./icons/bootstrap.png"
+  },
+  {
+    "id": 12,
+    "title": "Mongo DB",
+    "icon": "./icons/mongo-db.png"
+  }
+]
