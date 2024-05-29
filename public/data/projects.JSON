@@ -64,7 +64,7 @@
     ],
     "desc": "Sebuah website landing page diminum caffe. menampilkan homepage diminum caffe, tentang diminum caffe, dan menu diminum caffe.",
     "repository" : "https://github.com/danimisme/Mini-Project-Using-React",
-    "link": "https://diminum-caffe.vercel.app/menu",
+    "link": "https://diminum-caffe.vercel.app/",
     "img": [
       "./portfolio-images/diminum-caffe.png",
       "./portfolio-images/diminum-caffe2.png",
