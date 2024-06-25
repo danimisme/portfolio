@@ -44,9 +44,11 @@ export default function PortFolioSection() {
           </div>
         </div>
         <div className="w-full px-4 flex flex-wrap justify-center">
-          {projects.map((project) => (
-            <CardProject key={project.id} project={project} />
-          ))}
+          {projects
+            .sort((a, b) => b.id - a.id)
+            .map((project) => (
+              <CardProject key={project.id} project={project} />
+            ))}
         </div>
         <DetailProjectModal />
       </div>
