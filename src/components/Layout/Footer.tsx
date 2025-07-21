@@ -3,25 +3,25 @@ import {
   faGithub,
   faInstagram,
   faLinkedin,
-  faReact,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RiTailwindCssFill } from "react-icons/ri";
+import { SiNextdotjs } from "react-icons/si";
 
 export default function Footer() {
   return (
-    <footer className="bg-dark py-12 text-slate-300 dark:bg-darkgray">
+    <footer className="dark:bg-dark py-12 text-dark dark:text-slate-300  bg-gray-100">
       <div className="container">
         <div className="w-full flex flex-wrap lg:justify-end justify-between">
           <div className="w-full lg:w-[55%] md:w-1/2 px-4 lg:px-0 lg:text-center mb-8 lg:mb-0">
-            <p className=" mb-2 text-2xl text-white font-semibold">danimisme</p>
+            <p className=" mb-2 text-2xl text-primary dark:text-white font-semibold">danimisme</p>
             <p className="text-md mb-2">
               Built using
               <span className="inline-block ml-2 mr-1">
-                <FontAwesomeIcon icon={faReact} />
+                <SiNextdotjs />
               </span>
-              React.js and
+              Next.js and
               <span className="inline-block ml-2 mr-1">
                 <RiTailwindCssFill />
               </span>
@@ -34,7 +34,7 @@ export default function Footer() {
                 href="https://github.com/danimisme"
                 className="text-2xl mb-2 group"
               >
-                <span className="inline-block mr-5 text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
+                <span className="inline-block mr-5 text-primary dark:text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
                   <FontAwesomeIcon icon={faGithub} />
                 </span>
               </a>
@@ -43,7 +43,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/msubhanr//"
                 className="text-2xl mb-2 group"
               >
-                <span className="inline-block mr-5 text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
+                <span className="inline-block mr-5 text-primary dark:text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
                   <FontAwesomeIcon icon={faLinkedin} />
                 </span>
               </a>
@@ -52,7 +52,7 @@ export default function Footer() {
                 href="https://www.instagram.com/msubhanramdhani/"
                 className="text-2xl mb-2 group"
               >
-                <span className="inline-block mr-5 text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
+                <span className="inline-block mr-5 text-primary dark:text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
                   <FontAwesomeIcon icon={faInstagram} />
                 </span>
               </a>
@@ -61,7 +61,7 @@ export default function Footer() {
                 href="https://www.facebook.com/dhani20102011/"
                 className="text-2xl mb-2 group"
               >
-                <span className="inline-block mr-5 text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
+                <span className="inline-block mr-5 text-primary dark:text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
                   <FontAwesomeIcon icon={faFacebook} />
                 </span>
               </a>
@@ -70,7 +70,7 @@ export default function Footer() {
                 href="https://api.whatsapp.com/send?phone=628979761661"
                 className="text-2xl mb-2 group"
               >
-                <span className="inline-block mr-5 text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
+                <span className="inline-block mr-5 text-primary dark:text-sky-400 group-hover:-translate-y-2 transition duration-300 ">
                   <FontAwesomeIcon icon={faWhatsapp} />
                 </span>
               </a>
