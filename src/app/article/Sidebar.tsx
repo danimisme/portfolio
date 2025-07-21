@@ -39,7 +39,7 @@ export default function Sidebar({ articles }: SidebarProps) {
       >
         <div className={`mt-4 md:mt-8 lg:mt-12 sticky top-16 ${isOpen ? "opacity-100" : "opacity-0"}`}>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-bold dark:text-white">List Artikel</h2>
+            <h2 className="font-bold dark:text-white text-lg">List Artikel</h2>
             {isOpen && (
               <button
                 onClick={() => setIsOpen(!isOpen)}
