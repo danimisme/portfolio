@@ -20,10 +20,10 @@ export default function Sidebar({ articles }: SidebarProps) {
         {!isOpen && (
           <button
         onClick={() => setIsOpen(!isOpen)}
-        className=" fixed top-16 left-4 z-30 bg-gray-200 dark:bg-darkgray p-2 rounded shadow"
+        className=" fixed top-16 left-4 z-30 bg-gray-200 dark:bg-darkgray p-2 rounded shadow dark:border dark:border-gray-300"
       >
-          <div className="flex items-center gap-2">
-            <Menu size={20} /> <span>List Artikel</span>
+          <div className="flex items-center gap-2 font-poppins">
+            <Menu size={20} className="dark:text-gray-300"/> <span className="font-poppins text-sm dark:text-gray-300">List Artikel</span>
           </div>
       </button>
         )}
@@ -31,7 +31,7 @@ export default function Sidebar({ articles }: SidebarProps) {
       {/* Sidebar */}
       <aside
         className={`
-          h-full md:h-auto sm:pt-16 md:pt-0 px-4 w-64 bg-gray-100 dark:bg-darkgray border-r dark:border-gray-600
+          font-poppins text-sm h-full md:h-auto sm:pt-16 md:pt-0 px-4 w-64 bg-gray-100 dark:bg-darkgray border-r dark:border-gray-600
           fixed top-0 left-0 z-20 transition-transform duration-300 ease-in-out
           ${isOpen ? "translate-x-0" : "-translate-x-full"}
            md:relative md:z-0 ${isOpen ? "md:w-64" : "md:w-0"}
@@ -43,9 +43,9 @@ export default function Sidebar({ articles }: SidebarProps) {
             {isOpen && (
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="bg-gray-200 dark:bg-darkgray p-2 rounded shadow"
+                className="bg-gray-200 dark:bg-darkgray p-1 rounded-lg shadow dark:border dark:border-gray-300"
               >
-                <X size={20} />
+                <X size={20} className="dark:text-gray-300" />
               </button>
             )}
           </div>
