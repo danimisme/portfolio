@@ -14,15 +14,23 @@ export function getArticleSlugs(): string[] {
 }
 
 export function getAllArticlesMeta(): ArticleMeta[] {
-  return getArticleSlugs().map((slug) => {
+  const articles = getArticleSlugs().map((slug) => {
     const fullPath = path.join(articlesDir, `${slug}.md`);
     const { data } = matter(fs.readFileSync(fullPath, 'utf8'));
+
     return {
       slug,
       title: data.title || slug,
+      date: data.date,
     };
   });
+
+  // Urutkan berdasarkan date terbaru
+  return articles.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
 }
+
 
 export function getArticleRaw(slug: string): string {
   const fullPath = path.join(articlesDir, `${slug}.md`);
