@@ -1,8 +1,10 @@
 ---
 title: Axios Setup Documentation
+date: 2024-09-01
 ---
 
 # Axios Setup Documentation
+- Dibuat pada: 01 September 2024
 
 Dokumentasi ini menjelaskan konfigurasi dan fungsi-fungsi yang mendukung setup Axios untuk menangani autentikasi, refresh token, dan penanganan error.
 
