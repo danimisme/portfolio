@@ -139,3 +139,25 @@ body {
     margin-bottom: 0.5rem !important;
   }
 }
+
+.article-item::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0%;
+  bottom: -0.25rem;
+  width: 0%;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 9999px;
+  transition: all 0.5s ease-out;
+  @apply text-primary dark:text-blue-400
+}
+
+
+.article-item.active::after {
+  width: 30%;
+}
+.article-item:hover::after {
+  width: 50%;
+}
