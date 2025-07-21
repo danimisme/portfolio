@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleDarkMode } from "../../redux/slices/DarkModeSlice";
 import { RootState } from "@/redux/store";
 import ThemeInitializer from "./ThemeInitializer";
+import ToggleDarkMode from "../Elements/ToggleDarkMode";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -91,7 +92,7 @@ export default function Navbar() {
       <nav
         className={`bg-transparent fixed top-0 left-0 w-full flex items-center z-10 transition duration-300 ${navStyle}`}
       >
-        <div className="container">
+        <div className="mx-auto w-full max-w-7xl py-2">
           <div className="flex items-center justify-between relative">
             <div className="px-4 flex place-items-center">
               <img
@@ -101,7 +102,7 @@ export default function Navbar() {
               />
               <a
                 href="#"
-                className={`font-bold  text-3xl block py-1 hover:opacity-80 text-primary tracking-widest `}
+                className={`font-bold  text-3xl block hover:opacity-80 text-primary tracking-widest `}
               >
                 <span className="text-blue-500">anS</span>
               </a>
@@ -110,13 +111,13 @@ export default function Navbar() {
               <div
                 className={` ${
                   isOpen ? "block" : "hidden"
-                }  absolute my-3 py-3 lg:py-0 bg-white dark:bg-slate-700 dark:shadow-slate-950 lg:dark:bg-transparent shadow-md rounded-lg max-w-[250px] w-full right-4 top-full overflow-hidden lg:block lg:relative lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none `}
+                }  absolute  lg:py-0 bg-white dark:bg-slate-700 dark:shadow-slate-950 lg:dark:bg-transparent shadow-md rounded-lg max-w-[250px] w-full right-4 top-full overflow-hidden lg:block lg:relative lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none `}
               >
                 <ul className="block lg:flex items-center ">
                   <li className="group  flex">
                     <a
                       href="#"
-                      className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
+                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
                         activeSection === "home" ? "active" : ""
                       }
                     }`}
@@ -127,7 +128,7 @@ export default function Navbar() {
                   <li className="group  flex">
                     <a
                       href="#about"
-                      className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
+                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
                         activeSection === "about" ? "active" : ""
                       }
                     }`}
@@ -138,7 +139,7 @@ export default function Navbar() {
                   <li className="group  flex">
                     <a
                       href="#portfolio"
-                      className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
+                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
                         activeSection === "portfolio" ? "active" : ""
                       }
                     }`}
@@ -149,7 +150,7 @@ export default function Navbar() {
                   <li className="group  flex">
                     <a
                       href="#contact"
-                      className={`nav-link text-base text-dark dark:text-white py-2 mx-8 group-hover:text-primary ${
+                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
                         activeSection === "contact" ? "active" : ""
                       }
                     }`}
@@ -160,19 +161,8 @@ export default function Navbar() {
                 </ul>
               </div>
 
-              <div className="relative h-12 w-12 mb-0 lg:mb-2 mt-1 lg:mt-0 ">
-                <button
-                  className={`${!darkMode ? `translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button text-white hover:bg-slate-950`}
-                  onClick={() => dispatch(toggleDarkMode())}
-                >
-                  <CiLight />
-                </button>
-                <button
-                  className={`${darkMode ? `-translate-y-10 opacity-0` : "translate-y-0 opacity-100"} toggle-button hover:bg-slate-200`}
-                  onClick={() => dispatch(toggleDarkMode())}
-                >
-                  <CiDark />
-                </button>
+              <div className="flex items-center justify-center ">
+                <ToggleDarkMode />
               </div>
 
               <button
@@ -193,3 +183,5 @@ export default function Navbar() {
     </>
   );
 }
+
+
