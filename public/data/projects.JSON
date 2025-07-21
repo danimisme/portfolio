@@ -1,0 +1,129 @@
+[
+  {
+    "id": 1,
+    "title": "Bookshelf Apps Web",
+    "techStack": [
+      "./icons/html.png",
+      "./icons/css.png",
+      "./icons/js.png"
+    ],
+    "desc": "Memanfaatkan local Storage untuk menyimpan data. user dapat menambahkan buku, mengedit buku, dan menghapus buku.",
+    "repository" : "https://github.com/danimisme/bookshelf-app",
+    "link": "https://bookshelf-app-tawny.vercel.app/",
+    "img": [
+      "./portfolio-images/bookshelf-app.png",
+      "./portfolio-images/bookshelf-app2.png",
+      "./portfolio-images/bookshelf-app3.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Diminum Caffe",
+    "techStack": [
+      "./icons/reactjs.png",
+      "./icons/bootstrap.png"
+    ],
+    "desc": "Sebuah website landing page diminum caffe. menampilkan homepage diminum caffe, tentang diminum caffe, dan menu diminum caffe.",
+    "repository" : "https://github.com/danimisme/Mini-Project-Using-React",
+    "link": "https://diminum-caffe.vercel.app/",
+    "img": [
+      "./portfolio-images/diminum-caffe.png",
+      "./portfolio-images/diminum-caffe2.png",
+      "./portfolio-images/diminum-caffe3.png"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Contact App",
+    "techStack": [
+      "./icons/node-js.png",
+      "./icons/express-js.png",
+      "./icons/ejs.png",
+      "./icons/mongo-db.png"
+    ],
+    "desc": "Contact App adalah sebuah website yang dibuat untuk membantu menyimpan contact dengan mudah. Contact app dibuat menggunakan Node JS, Express JS, EJS dan Mongo DB sebagai studi kasus saya. ",
+    "repository" : "https://github.com/danimisme/contact-app",
+    "link": "https://contact-app-nine-omega.vercel.app/" ,
+    "img": [
+      "./portfolio-images/contact-app.png",
+      "./portfolio-images/contact-app2.png",
+      "./portfolio-images/contact-app3.png"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Dibimbing food",
+    "techStack": [
+      "./icons/nextjs.png",
+      "./icons/tailwindcss.png",
+      "./icons/axios.png"
+    ],
+    "desc": "Sebuah website food yang mengambil data dari food API dibimbing.id . user dapat melakukan CRUD menu food.",
+    "repository" : "https://github.com/danimisme/dibimbing-food",
+    "link": "https://dibimbing-food.vercel.app/",
+    "img": [
+      "./portfolio-images/dibimbing-food.png",
+      "./portfolio-images/dibimbing-food2.png",
+      "./portfolio-images/dibimbing-food3.png",
+      "./portfolio-images/dibimbing-food4.png"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Kelana Travel Web",
+    "techStack": [
+      "./icons/reactjs.png",
+      "./icons/tailwindcss.png",
+      "./icons/redux.png",
+      "./icons/axios.png"
+    ],
+    "desc": "Memanfaatkan data dari travel API dibimbing.id, admin dapat mengakses dashboard dan dapat melakukan CRUD data promo, activty, banner,profile dan mengupdate role user.",
+    "repository" : "https://github.com/danimisme/kelana-travel",
+    "link": "https://kelana-travel.vercel.app/",
+    "img": [
+      "./portfolio-images/kelana.png",
+      "./portfolio-images/kelana-login.png",
+      "./portfolio-images/kelana-dashboard.png",
+      "./portfolio-images/kelana-activity.png",
+      "./portfolio-images/kelana-register.png"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Peacegraph Print",
+    "techStack": [
+      "./icons/nextjs.png",
+      "./icons/typescript.png",
+      "./icons/redux.png",
+      "./icons/tailwindcss.png",
+      "./icons/axios.png"
+    ],
+    "desc": "Sebuah website UMKM yang didalamnya terdapat Content Management System (CMS) , sehingga admin dapat mengakses dashboard dan dapat melakukan CRUD produk dan konten mereka secara mandiri. ",
+    "repository" : "https://github.com/danimisme/peacegraph",
+    "link": "https://www.peacegraph.my.id/",
+    "img": [
+      "./portfolio-images/peacegraph1.png",
+      "./portfolio-images/peacegraph2.png",
+      "./portfolio-images/peacegraph3.png",
+      "./portfolio-images/peacegraph4.png"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Pervite.com",
+    "techStack": [
+      "./icons/wordpress.png",
+      "./icons/elementor.png",
+      "./icons/html.png",
+      "./icons/js.png"
+    ],
+    "desc": "Pervite.com adalah sebuah website jasa undangan digital yang dibuat menggunakan WordPress dan Elementor. ",
+    "repository" : "https://github.com/danimisme",
+    "link": "https://pervite.com/",
+    "img": [
+      "./portfolio-images/pervite.png",
+      "./portfolio-images/pervite2.png",
+      "./portfolio-images/pervite3.png"
+    ]
+  }
+]
