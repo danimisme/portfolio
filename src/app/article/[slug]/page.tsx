@@ -2,14 +2,22 @@ import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { getArticleSlugs, getArticleRaw } from '@/lib/markdown';
 import matter from 'gray-matter';
+import { Metadata } from 'next';
 
-interface PageProps {
-  params: { slug: string };
-}
 
 export async function generateStaticParams() {
   const slugs = getArticleSlugs();
   return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params;
+  const raw = getArticleRaw(slug);
+  const { data } = matter(raw);
+  return {
+    title: data.title,
+    description: data.description,
+  };
 }
 
 export default async function ArticlePage({
