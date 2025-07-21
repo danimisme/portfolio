@@ -1,12 +1,14 @@
-import { ArticleMeta } from '@/types/Article';
-import { ReactNode } from 'react';
-import { getAllArticlesMeta } from '@/lib/markdown';
-import NavbarWithProvider from '@/components/Layout/NavbarWithProvider';
-import ArticleList from './ArticleList';
+import { ArticleMeta } from "@/types/Article";
+import { ReactNode } from "react";
+import { getAllArticlesMeta } from "@/lib/markdown";
+import NavbarWithProvider from "@/components/Layout/NavbarWithProvider";
+import ArticleList from "./ArticleList";
+import Footer from "@/components/Layout/Footer";
+import Sidebar from "./Sidebar";
 
 // agar di‑bundle pada build time:
 export const metadata = {
-  title: 'Artikel',
+  title: "Artikel",
 };
 
 export default function ArticleLayout({ children }: { children: ReactNode }) {
@@ -14,20 +16,15 @@ export default function ArticleLayout({ children }: { children: ReactNode }) {
 
   return (
     <>
-    <div className="flex min-h-screen pt-14 dark:bg-dark" >
-      <aside className="w-64 bg-gray-100 dark:bg-darkgray p-4 border-r dark:border-gray-600">
-        <div className='sticky top-16'>
-          <h2 className="font-bold mb-4 dark:text-white">Daftar Artikel</h2>
-          <ArticleList articles={articles} />
-        </div>
-      </aside>
-      <main className="flex-1 p-8"> 
-    <NavbarWithProvider />
-
-        {children}
+      <div className="flex min-h-screen pt-14 dark:bg-dark">
+        <Sidebar articles={articles} />
+        <main className="flex-1">
+          <NavbarWithProvider />
+          {children}
+          <div className="h-32"></div>
+          <Footer />
         </main>
-    </div>
+      </div>
     </>
   );
 }
-
