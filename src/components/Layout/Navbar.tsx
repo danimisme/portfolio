@@ -1,19 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CiDark, CiLight } from "react-icons/ci";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleDarkMode } from "../../redux/slices/DarkModeSlice";
+import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import ThemeInitializer from "./ThemeInitializer";
 import ToggleDarkMode from "../Elements/ToggleDarkMode";
+import { usePathname } from "next/navigation";
 
+interface NavItem {
+  href: string;
+  label: string;
+  page: string;
+}
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [navStyle, setNavStyle] = useState("");
-  const [activeSection, setActiveSection] = useState("home");
+  const [activePage, setActivePage] = useState("home");
   const darkMode = useSelector((state: RootState) => state.darkMode.darkMode);
-  const dispatch = useDispatch();
+  const [navList, setNavList] = useState<NavItem[]>([] as NavItem[]);
 
   useEffect(() => {
     console.log(darkMode);
@@ -25,43 +29,45 @@ export default function Navbar() {
   });
 
   useEffect(() => {
-  const handleScrollStyle = () => {
-    if (window.scrollY >= 100 && window.scrollY < 300) {
-      setNavStyle("navbar-hide");
-    } else if (window.scrollY >= 300) {
-      setNavStyle("navbar-scrolled");
-    } else {
-      setNavStyle("navbar-show");
-    }
-  };
+    const handleScrollStyle = () => {
+      if (window.scrollY >= 100 && window.scrollY < 300) {
+        setNavStyle("navbar-hide");
+      } else if (window.scrollY >= 300) {
+        setNavStyle("navbar-scrolled");
+      } else {
+        setNavStyle("navbar-show");
+      }
+    };
 
-  window.addEventListener("scroll", handleScrollStyle);
-  handleScrollStyle(); // run on mount too
+    window.addEventListener("scroll", handleScrollStyle);
+    handleScrollStyle(); // run on mount too
 
-  return () => {
-    window.removeEventListener("scroll", handleScrollStyle);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("scroll", handleScrollStyle);
+    };
+  }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ["home", "about", "portfolio", "contact"]; // Daftar ID section yang ingin dipantau
+    if (pathName === "/") {
+      const handleScroll = () => {
+        const sections = ["home", "about", "portfolio", "contact"]; // Daftar ID section yang ingin dipantau
 
-      sections.forEach((sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-          const { top } = section.getBoundingClientRect();
-          if (top <= 150 && top >= -section.clientHeight) {
-            setActiveSection(sectionId); // Update state jika section terlihat di layar
+        sections.forEach((sectionId) => {
+          const section = document.getElementById(sectionId);
+          if (section) {
+            const { top } = section.getBoundingClientRect();
+            if (top <= 150 && top >= -section.clientHeight) {
+              setActivePage(sectionId); // Update state jika section terlihat di layar
+            }
           }
-        }
-      });
-    };
+        });
+      };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -86,13 +92,38 @@ export default function Navbar() {
     };
   }, [isOpen]);
 
+  const navHome = [
+    { href: "/#", label: "Beranda", page: "home" },
+    { href: "#about", label: "Tentang Saya", page: "about" },
+    { href: "#portfolio", label: "Portfolio", page: "portfolio" },
+    { href: "#contact", label: "Contact", page: "contact" },
+    { href: "/article", label: "Article", page: "article" },
+  ];
+
+  const navGlobal = [
+    { href: "/#", label: "Beranda", page: "home" },
+    { href: "/article", label: "Article", page: "article" },
+  ];
+
+  const pathName = usePathname();
+  useEffect(() => {
+    if (pathName === "/") {
+      setNavList(navHome);
+    } else if (pathName.startsWith("/article")) {
+      setNavList(navGlobal);
+      setActivePage("article");
+    }
+  }, [pathName]);
+
   return (
     <>
       <ThemeInitializer />
       <nav
         className={`bg-transparent fixed top-0 left-0 w-full flex items-center z-10 transition duration-300 ${navStyle}`}
       >
-        <div className="mx-auto w-full max-w-7xl py-2">
+        <div
+          className={`mx-auto w-full ${pathName.startsWith("/article") ? "px-0" : "max-w-7xl"} py-2`}
+        >
           <div className="flex items-center justify-between relative">
             <div className="px-4 flex place-items-center">
               <img
@@ -101,7 +132,7 @@ export default function Navbar() {
                 className="h-8 inline-block pb-1 mr-[3px]"
               />
               <a
-                href="#"
+                href="/"
                 className={`font-bold  text-3xl block hover:opacity-80 text-primary tracking-widest `}
               >
                 <span className="text-blue-500">anS</span>
@@ -113,51 +144,19 @@ export default function Navbar() {
                   isOpen ? "block" : "hidden"
                 }  absolute  lg:py-0 bg-white dark:bg-slate-700 dark:shadow-slate-950 lg:dark:bg-transparent shadow-md rounded-lg max-w-[250px] w-full right-4 top-full overflow-hidden lg:block lg:relative lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none `}
               >
-                <ul className="block lg:flex items-center ">
-                  <li className="group  flex">
-                    <a
-                      href="#"
-                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
-                        activeSection === "home" ? "active" : ""
-                      }
-                    }`}
-                    >
-                      Beranda
-                    </a>
-                  </li>
-                  <li className="group  flex">
-                    <a
-                      href="#about"
-                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
-                        activeSection === "about" ? "active" : ""
-                      }
-                    }`}
-                    >
-                      Tentang Saya
-                    </a>
-                  </li>
-                  <li className="group  flex">
-                    <a
-                      href="#portfolio"
-                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
-                        activeSection === "portfolio" ? "active" : ""
-                      }
-                    }`}
-                    >
-                      Portfolio
-                    </a>
-                  </li>
-                  <li className="group  flex">
-                    <a
-                      href="#contact"
-                      className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
-                        activeSection === "contact" ? "active" : ""
-                      }
-                    }`}
-                    >
-                      Contact
-                    </a>
-                  </li>
+                <ul className="block lg:flex items-center">
+                  {navList.map((item) => (
+                    <li key={item.page} className="group flex">
+                      <a
+                        href={item.href}
+                        className={`nav-link text-base text-dark dark:text-white mx-8 group-hover:text-primary ${
+                          activePage === item.page ? "active" : ""
+                        }`}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -183,5 +182,3 @@ export default function Navbar() {
     </>
   );
 }
-
-
