@@ -1,7 +1,7 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import TypeIt from "typeit-react";
 import { faArrowDown, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
@@ -71,6 +71,16 @@ export default function HeroSection() {
             <hr className=" border-t-4 mb-5" />
             <div className="flex gap-4 text-3xl mb-10 ml-3 text-blue-500">
               <a
+                href="https://www.linkedin.com/in/msubhanr/"
+                className="group"
+                target="_blank"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="group-hover:text-dark  dark:group-hover:text-white group-hover:-translate-y-3 transition duration-300 ease-in-out"
+                />
+              </a>
+              <a
                 href="https://api.whatsapp.com/send/?phone=628979761661&text&type=phone_number&app_absent=0"
                 className="group"
                 target="_blank"
@@ -90,19 +100,10 @@ export default function HeroSection() {
                   className="group-hover:text-dark dark:group-hover:text-white  group-hover:-translate-y-3 transition duration-300 ease-in-out"
                 />
               </a>
-              <a
-                href="https://github.com/danimisme/"
-                className="group"
-                target="_blank"
-              >
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className="group-hover:text-dark  dark:group-hover:text-white group-hover:-translate-y-3 transition duration-300 ease-in-out"
-                />
-              </a>
             </div>
             <a
-              href="#"
+              href="https://api.whatsapp.com/send/?phone=628979761661&text&type=phone_number&app_absent=0"
+              target="_blank"
               className="text-base font-semibold bg-primary px-7 py-3 rounded-full border-4 border-primary hover:bg-transparent  hover:text-primary hover:shadow-lg  text-white transition duration-300 ease-in-out"
             >
               Contact Me
