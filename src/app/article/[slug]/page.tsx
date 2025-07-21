@@ -1,4 +1,3 @@
-import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 import { getArticleSlugs, getArticleRaw } from '@/lib/markdown';
 import matter from 'gray-matter';

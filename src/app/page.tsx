@@ -14,7 +14,7 @@ import { Provider } from "react-redux";
 
 export default function Home() {
   return (
-    <>
+    <div className="font-poppins">
     <Provider store={store}>
     <Navbar />
     <FloatingBackground>
@@ -27,6 +27,6 @@ export default function Home() {
     <ContactSection />
     <Footer />
     </Provider>
-    </>
+    </div>
   );
 }

@@ -119,7 +119,7 @@ export default function Navbar() {
     <>
       <ThemeInitializer />
       <nav
-        className={`bg-transparent fixed top-0 left-0 w-full flex items-center z-10 transition duration-300 ${navStyle}`}
+        className={`bg-transparent fixed top-0 left-0 w-full flex items-center z-10 transition duration-300 font-poppins ${navStyle}`}
       >
         <div
           className={`mx-auto w-full ${pathName.startsWith("/article") ? "px-0" : "max-w-7xl"} py-2`}

@@ -18,7 +18,7 @@ export default function ArticleLayout({ children }: { children: ReactNode }) {
     <>
       <div className="flex min-h-screen pt-14 dark:bg-dark">
         <Sidebar articles={articles} />
-        <main className="flex-1">
+        <main className="flex-1 font-poppins">
           <NavbarWithProvider />
           {children}
           <div className="h-32"></div>
