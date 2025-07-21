@@ -22,7 +22,7 @@ export default async function ArticlePage({
   const { content } = matter(raw);
 
   return (
-    <article className="prose md:prose-md lg:max-w-5xl mx-auto dark:prose-invert">
+    <article className="prose mt-4 md:mt-8 lg:mt-12 md:prose-md lg:max-w-5xl mx-auto dark:prose-invert">
       <ReactMarkdown>{content}</ReactMarkdown>
     </article>
   );
