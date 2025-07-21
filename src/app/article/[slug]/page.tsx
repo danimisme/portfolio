@@ -19,6 +19,7 @@ export async function generateMetadata({
   const { data } = matter(raw);
   return {
     title: data.title || "Artikel",
+    description: "Muhammad Subhan Ramdhani",
   };
 }
 
