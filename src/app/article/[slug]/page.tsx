@@ -9,13 +9,16 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params;
   const raw = getArticleRaw(slug);
   const { data } = matter(raw);
   return {
-    title: data.title,
-    description: data.description,
+    title: data.title || "Artikel",
   };
 }
 
