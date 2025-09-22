@@ -10,6 +10,7 @@ const LoadingScreen = () => {
   const darkMode = useSelector((state: RootState) => state.darkMode.darkMode);
   const [progress, setProgress] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [isMinimizing, setIsMinimizing] = useState(false);
   const [currentText, setCurrentText] = useState("Initializing...");
 
   const loadingTexts = [
@@ -73,11 +74,13 @@ const LoadingScreen = () => {
 
           if (newProgress >= 100) {
             clearInterval(progressInterval);
-            // Delay sebelum menghilangkan loading screen
+            // Mulai animasi minimize tanpa delay
             setTimeout(() => {
+              setIsMinimizing(true);
               dispatch(setLoading(false));
-              setTimeout(() => setIsVisible(false), 800); // Delay untuk animasi fade out
-            }, 1000);
+              // Hapus loading screen setelah animasi minimize selesai
+              setTimeout(() => setIsVisible(false), 1200); // Durasi animasi minimize
+            }, 500);
             return 100;
           }
           return newProgress;
@@ -92,16 +95,22 @@ const LoadingScreen = () => {
 
   return (
     <div
-      className={`loading-screen-container z-50 flex items-center justify-center transition-all duration-800 ${
+      className={`loading-screen-container flex items-center justify-center transition-all duration-1000 ease-in-out ${
         darkMode 
           ? "bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900" 
           : "bg-gradient-to-br from-blue-50 via-white to-blue-100"
       } ${
-        isLoading ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        isMinimizing 
+          ? " transform -translate-y-full" 
+          : isLoading 
+            ? "opacity-100 scale-100 translate-y-0" 
+            : "opacity-100 scale-100 translate-y-0"
       }`}
       style={{
-        touchAction: 'none', // Mencegah touch scrolling
-        userSelect: 'none'   // Mencegah text selection
+        touchAction: 'none',
+        userSelect: 'none',
+        zIndex: isLoading ? 9999 : -1, // Ensure loading screen is always on top when active
+        transformOrigin: 'bottom center' // Minimize dari bawah
       }}
       onWheel={(e) => e.preventDefault()} // Mencegah mouse wheel scroll
       onTouchMove={(e) => e.preventDefault()} // Mencegah touch scroll
@@ -112,7 +121,7 @@ const LoadingScreen = () => {
         }
       }}
     >
-      <div className="text-center loading-fadeInUp">
+      <div className={`text-center transition-all duration-1000 ${isMinimizing ? 'loading-minimize' : 'loading-fadeInUp'}`}>
         {/* Main Loading Animation */}
         <div className="mb-8 flex justify-center">
           <div className="relative loading-float">

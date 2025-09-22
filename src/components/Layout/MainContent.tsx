@@ -19,10 +19,10 @@ const MainContent = ({ children }: MainContentProps) => {
       dispatch(setLoading(false));
     }, 4000); // 4 detik loading untuk memberikan waktu animasi yang cukup
 
-    // Set content ready setelah loading selesai
+    // Set content ready langsung tanpa delay tambahan
     const contentTimer = setTimeout(() => {
       setIsContentReady(true);
-    }, 5000);
+    }, 4500); // Sedikit delay setelah loading selesai
 
     return () => {
       clearTimeout(timer);
@@ -32,13 +32,14 @@ const MainContent = ({ children }: MainContentProps) => {
 
   return (
     <div
-      className={`transition-all duration-1000 ease-out transform ${
+      className={`main-content-layer transition-all duration-1000 ease-out ${
         isLoading 
-          ? "opacity-0 translate-y-8 pointer-events-none scale-95" 
-          : "opacity-100 translate-y-0 scale-100"
-      } ${isContentReady ? "animate-none" : ""}`}
+          ? "opacity-100 translate-y-0 scale-100" // Konten sudah siap di background
+          : "opacity-100 translate-y-0 scale-100 content-reveal" // Tetap terlihat setelah loading dengan reveal effect
+      }`}
       style={{
-        transitionDelay: isLoading ? "0ms" : "800ms" // Delay untuk smooth transition
+        zIndex: isLoading ? 1 : 10, // Di bawah loading screen saat loading, di atas setelah loading
+        position: 'relative'
       }}
     >
       {children}
