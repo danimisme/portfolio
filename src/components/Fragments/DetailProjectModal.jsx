@@ -40,7 +40,7 @@ export default function DetailProjectModal() {
 
   return (
     <div
-      className={`fixed h-screen top-0 left-0 w-full  flex justify-center items-center bg-black bg-opacity-50 z-50 transition-all duration-500 ${isOpen ? "opacity-100 pointer-events-auto " : " opacity-0 pointer-events-none"}`}
+      className={`fixed h-screen top-0 left-0 w-full  flex justify-center items-center bg-black/60 transition-all duration-500 ${isOpen ? "opacity-100 pointer-events-auto " : " opacity-0 pointer-events-none"}`}
     >
       <div
         className={` bg-white backdrop-blur-sm bg-opacity-70 dark:bg-dark dark:bg-opacity-70 dark:backdrop-blur-sm absolute p-4 w-[80%] lg:w-[70%] max-h-[90vh] rounded-lg  overflow-y-auto transition-all duration-500 ${isOpen ? "opacity-100 translate-y-0" : "translate-y-24 opacity-0 "}`}

@@ -24,21 +24,30 @@ const LoadingScreen = () => {
   // Effect untuk mencegah scroll saat loading
   useEffect(() => {
     if (isLoading) {
+      // Simpan posisi scroll saat ini
+      const scrollY = window.scrollY;
+      
       // Prevent scrolling saat loading
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
-      document.body.style.top = '0';
+      document.body.style.top = `-${scrollY}px`;
       document.body.style.left = '0';
       document.body.style.right = '0';
-      document.body.style.bottom = '0';
+      document.body.style.width = '100%';
     } else {
       // Restore scrolling setelah loading selesai
+      const scrollY = document.body.style.top;
       document.body.style.overflow = 'unset';
       document.body.style.position = 'unset';
       document.body.style.top = 'unset';
       document.body.style.left = 'unset';
       document.body.style.right = 'unset';
-      document.body.style.bottom = 'unset';
+      document.body.style.width = 'unset';
+      
+      // Restore scroll position
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
     }
 
     // Cleanup function
@@ -48,7 +57,7 @@ const LoadingScreen = () => {
       document.body.style.top = 'unset';
       document.body.style.left = 'unset';
       document.body.style.right = 'unset';
-      document.body.style.bottom = 'unset';
+      document.body.style.width = 'unset';
     };
   }, [isLoading]);
 
@@ -109,7 +118,7 @@ const LoadingScreen = () => {
       style={{
         touchAction: 'none',
         userSelect: 'none',
-        zIndex: isLoading ? 9999 : -1, // Ensure loading screen is always on top when active
+        zIndex: isLoading ? 9999 : -10, // Ensure loading screen is always on top when active, far below when inactive
         transformOrigin: 'bottom center' // Minimize dari bawah
       }}
       onWheel={(e) => e.preventDefault()} // Mencegah mouse wheel scroll
@@ -141,14 +150,20 @@ const LoadingScreen = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className={`h-14 w-14 rounded-full loading-glow flex items-center justify-center ${
                 darkMode 
-                  ? "bg-white" 
-                  : "bg-blue-600"
+                  ? "bg-white  shadow-lg shadow-blue-900/50" 
+                  : "bg-white shadow-lg shadow-blue-400/30"
               }`}>
                 <span className={`text-2xl font-bold ${
                   darkMode 
                     ? "text-blue-600" 
                     : "text-white"
-                }`}>D</span>
+                }`}>
+                  <img
+                src="/icons/d.png"
+                alt="d"
+                className="h-8 inline-block pb-1 mr-[3px]"
+              />
+                </span>
               </div>
             </div>
           </div>
@@ -161,7 +176,7 @@ const LoadingScreen = () => {
               ? "text-white" 
               : "text-slate-800"
           }`}>
-            Muhammad Subhan
+            Dani
           </h1>
           <p className={`text-lg md:text-xl font-medium animate-pulse ${
             darkMode 

@@ -17,6 +17,7 @@ export default function Navbar() {
   const [navStyle, setNavStyle] = useState("");
   const [activePage, setActivePage] = useState("home");
   const darkMode = useSelector((state: RootState) => state.darkMode.darkMode);
+  const isLoading = useSelector((state: RootState) => state.loading.isLoading);
   const [navList, setNavList] = useState<NavItem[]>([] as NavItem[]);
 
   useEffect(() => {
@@ -30,6 +31,9 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScrollStyle = () => {
+      // Skip scroll detection saat loading masih aktif
+      if (isLoading) return;
+      
       if (window.scrollY >= 100 && window.scrollY < 300) {
         setNavStyle("navbar-hide");
       } else if (window.scrollY >= 300) {
@@ -45,7 +49,7 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScrollStyle);
     };
-  }, []);
+  }, [isLoading]); // Tambahkan isLoading sebagai dependency
 
   useEffect(() => {
     if (pathName === "/") {

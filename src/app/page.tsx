@@ -8,29 +8,25 @@ import PortFolioSection from "@/components/Fragments/PortFolioSection";
 import SkillSection from "@/components/Fragments/SkillSection";
 import FloatingBackground from "@/components/Layout/FloatingBackgrund";
 import Footer from "@/components/Layout/Footer";
-import MainContent from "@/components/Layout/MainContent";
 import Navbar from "@/components/Layout/Navbar";
 import store from "@/redux/store";
 import { Provider } from "react-redux";
 
-
 export default function Home() {
   return (
     <div className="font-poppins max-w-screen overflow-x-hidden">
-    <Provider store={store}>
-      <LoadingScreen />
-      <MainContent>
+      <Provider store={store}>
+        <LoadingScreen />
         <Navbar />
         <FloatingBackground>
-            <HeroSection />
+          <HeroSection />
         </FloatingBackground>
-          <AboutSection />
-          <SkillSection />
-          <PortFolioSection />
-          <ButtonUp />
+        <AboutSection />
+        <SkillSection />
+        <PortFolioSection />
+        <ButtonUp />
         <ContactSection />
         <Footer />
-      </MainContent>
       </Provider>
     </div>
   );
