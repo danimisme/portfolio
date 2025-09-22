@@ -161,3 +161,83 @@ body {
 .article-item:hover::after {
   width: 50%;
 }
+
+/* Loading Screen Animations */
+@keyframes loading-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes loading-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes loading-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes loading-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading-float {
+  animation: loading-float 2s ease-in-out infinite;
+}
+
+.loading-glow {
+  animation: loading-glow 2s ease-in-out infinite;
+}
+
+.loading-gradient {
+  background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+  background-size: 400% 400%;
+  animation: loading-gradient 3s ease infinite;
+}
+
+.loading-fadeInUp {
+  animation: loading-fadeInUp 0.6s ease-out forwards;
+}
+
+/* Loading Screen Progress Bar Enhancement */
+.progress-bar-glow {
+  position: relative;
+  overflow: visible;
+}
+
+.progress-bar-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  filter: blur(4px);
+  opacity: 0.7;
+  z-index: -1;
+}
