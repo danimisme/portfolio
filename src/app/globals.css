@@ -181,7 +181,28 @@ body {
   }
 }
 
+@keyframes loading-glow-light {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.7), 0 0 60px rgba(37, 99, 235, 0.5);
+  }
+}
+
 @keyframes loading-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes loading-gradient-light {
   0% {
     background-position: 0% 50%;
   }
@@ -212,10 +233,22 @@ body {
   animation: loading-glow 2s ease-in-out infinite;
 }
 
+/* Light mode glow effect */
+body:not(.dark) .loading-glow {
+  animation: loading-glow-light 2s ease-in-out infinite;
+}
+
 .loading-gradient {
   background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
   background-size: 400% 400%;
   animation: loading-gradient 3s ease infinite;
+}
+
+/* Light mode gradient */
+.loading-gradient-light {
+  background: linear-gradient(-45deg, #dbeafe, #ffffff, #e0f2fe, #f0f9ff);
+  background-size: 400% 400%;
+  animation: loading-gradient-light 3s ease infinite;
 }
 
 .loading-fadeInUp {
@@ -240,4 +273,10 @@ body {
   filter: blur(4px);
   opacity: 0.7;
   z-index: -1;
+}
+
+/* Light mode progress bar glow */
+body:not(.dark) .progress-bar-glow::after {
+  opacity: 0.5;
+  filter: blur(6px);
 }

@@ -16,7 +16,7 @@ import { Provider } from "react-redux";
 
 export default function Home() {
   return (
-    <div className="font-poppins">
+    <div className="font-poppins max-w-screen overflow-x-hidden">
     <Provider store={store}>
       <LoadingScreen />
       <MainContent>
