@@ -20,6 +20,37 @@ const LoadingScreen = () => {
     "Welcome!"
   ];
 
+  // Effect untuk mencegah scroll saat loading
+  useEffect(() => {
+    if (isLoading) {
+      // Prevent scrolling saat loading
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.top = '0';
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.bottom = '0';
+    } else {
+      // Restore scrolling setelah loading selesai
+      document.body.style.overflow = 'unset';
+      document.body.style.position = 'unset';
+      document.body.style.top = 'unset';
+      document.body.style.left = 'unset';
+      document.body.style.right = 'unset';
+      document.body.style.bottom = 'unset';
+    }
+
+    // Cleanup function
+    return () => {
+      document.body.style.overflow = 'unset';
+      document.body.style.position = 'unset';
+      document.body.style.top = 'unset';
+      document.body.style.left = 'unset';
+      document.body.style.right = 'unset';
+      document.body.style.bottom = 'unset';
+    };
+  }, [isLoading]);
+
   useEffect(() => {
     if (isLoading) {
       // Simulasi progress loading dengan text yang berubah
@@ -61,13 +92,25 @@ const LoadingScreen = () => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-800 ${
+      className={`loading-screen-container z-50 flex items-center justify-center transition-all duration-800 ${
         darkMode 
           ? "bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900" 
           : "bg-gradient-to-br from-blue-50 via-white to-blue-100"
       } ${
         isLoading ? "opacity-100 scale-100" : "opacity-0 scale-95"
       }`}
+      style={{
+        touchAction: 'none', // Mencegah touch scrolling
+        userSelect: 'none'   // Mencegah text selection
+      }}
+      onWheel={(e) => e.preventDefault()} // Mencegah mouse wheel scroll
+      onTouchMove={(e) => e.preventDefault()} // Mencegah touch scroll
+      onKeyDown={(e) => {
+        // Mencegah arrow keys, space, page up/down scroll
+        if (['ArrowUp', 'ArrowDown', 'Space', 'PageUp', 'PageDown', 'Home', 'End'].includes(e.code)) {
+          e.preventDefault();
+        }
+      }}
     >
       <div className="text-center loading-fadeInUp">
         {/* Main Loading Animation */}
