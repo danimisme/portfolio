@@ -267,7 +267,9 @@ const LoadingScreen = () => {
         {/* Skills Preview with Better Animation */}
         <div className="flex justify-center space-x-4 md:space-x-6 opacity-80 px-4">
           <div className="flex flex-col items-center animate-pulse loading-float" style={{ animationDelay: "0s" }}>
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-orange-500 rounded-xl mb-2 flex items-center justify-center text-white font-bold shadow-lg text-xs md:text-sm">R</div>
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl mb-2 flex items-center justify-center text-white font-bold text-xs md:text-sm">
+              <img src="/icons/reactjs.png" alt="React" className="w-full object-cover"/>
+            </div>
             <span className={`text-xs md:text-sm font-medium ${
               darkMode 
                 ? "text-white" 
@@ -275,7 +277,9 @@ const LoadingScreen = () => {
             }`}>React</span>
           </div>
           <div className="flex flex-col items-center animate-pulse loading-float" style={{ animationDelay: "0.5s" }}>
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-blue-600 rounded-xl mb-2 flex items-center justify-center text-white font-bold shadow-lg text-xs md:text-sm">TS</div>
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl mb-2 flex items-center justify-center text-white font-bold text-xs md:text-sm">
+              <img src="/icons/typescript.png" alt="TypeScript" className="w-full object-cover"/>
+            </div>
             <span className={`text-xs md:text-sm font-medium ${
               darkMode 
                 ? "text-white" 
@@ -283,11 +287,9 @@ const LoadingScreen = () => {
             }`}>TypeScript</span>
           </div>
           <div className="flex flex-col items-center animate-pulse loading-float" style={{ animationDelay: "1s" }}>
-            <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl mb-2 flex items-center justify-center font-bold shadow-lg text-xs md:text-sm ${
-              darkMode 
-                ? "bg-black text-white" 
-                : "bg-slate-800 text-white"
-            }`}>N</div>
+            <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl mb-2 flex items-center justify-center font-bold text-xs md:text-sm `}>
+              <img src="/icons/nextjs.png" alt="Next.js" className="w-full object-cover"/>
+            </div>
             <span className={`text-xs md:text-sm font-medium ${
               darkMode 
                 ? "text-white" 
@@ -295,7 +297,9 @@ const LoadingScreen = () => {
             }`}>Next.js</span>
           </div>
           <div className="flex flex-col items-center animate-pulse loading-float" style={{ animationDelay: "1.5s" }}>
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-cyan-500 rounded-xl mb-2 flex items-center justify-center text-white font-bold shadow-lg text-xs md:text-sm">TW</div>
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl mb-2 flex items-center justify-center text-white font-bold text-xs md:text-sm">
+              <img src="/icons/tailwindcss.png" alt="Tailwind" className="w-full object-cover"/>
+            </div>
             <span className={`text-xs md:text-sm font-medium ${
               darkMode 
                 ? "text-white" 
