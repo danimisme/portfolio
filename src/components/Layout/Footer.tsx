@@ -78,12 +78,12 @@ export default function Footer() {
           </div>
 
           <div className="w-full lg:w-1/4 md:w-1/4 px-4 lg:px-20">
-            <p className="mb-2 text-xl">Tautan</p>
+            <p className="mb-2 text-xl">Links</p>
             <a href="#" className="block text-sm mb-2 hover:text-primary">
-              Beranda
+              Home
             </a>
             <a href="#about" className="block text-sm mb-2 hover:text-primary">
-              Tentang Saya
+              About Me
             </a>
             <a
               href="#portfolio"

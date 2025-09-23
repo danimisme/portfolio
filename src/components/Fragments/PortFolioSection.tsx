@@ -37,11 +37,10 @@ export default function PortFolioSection() {
               Portfolio
             </h4>
             <h2 className="text-dark font-bold text-3xl mb-4 dark:text-white">
-              Project Terbaru
+              My Projects
             </h2>
             <p className="text-medium font-medium text-secondary">
-              Dibawah ini merupakan beberapa project yang pernah saya buat untuk
-              mempraktikan apa yang telah saya pelajari.
+              Here are a few projects I’ve worked on to put my skills into practice and continue learning.
             </p>
           </div>
         </div>

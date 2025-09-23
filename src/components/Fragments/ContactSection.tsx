@@ -24,7 +24,7 @@ export default function ContactSection() {
             data-aos="fade-right"
           >
             <h3 className="text-dark font-bold text-xl md:text-2xl mb-8 dark:text-white">
-              Mari berdikusi
+              Let's discuss
             </h3>
             <div className=" mt-4 ">
               <div className="mb-3 ">
@@ -71,7 +71,7 @@ export default function ContactSection() {
             data-aos-duration="500"
           >
             <h3 className="text-dark font-bold text-xl md:text-2xl  dark:text-white ">
-              Atau
+              Or
             </h3>
           </div>
 
@@ -81,7 +81,7 @@ export default function ContactSection() {
             data-aos-duration="500"
           >
             <h3 className="text-dark font-bold text-xl md:text-2xl mb-8  dark:text-white">
-              Kirimikan Pesan
+              Send a Message
             </h3>
             <form action="">
               <InputForm name="name" label="Name" placeholder=" " />
@@ -99,7 +99,7 @@ export default function ContactSection() {
               />
               <div className="flex justify-end">
                 <button className="bg-primary text-white px-5 py-3 rounded-lg  hover:opacity-80 hover:shadow-md transition duration-300">
-                  Kirim
+                  Send
                 </button>
               </div>
             </form>

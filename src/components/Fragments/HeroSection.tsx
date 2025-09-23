@@ -26,7 +26,7 @@ export default function HeroSection() {
                 getBeforeInit={(instance) => {
                   instance
                     .pause(3000)
-                    .type("Halo 👋, Saya")
+                    .type("Hi 👋, my name is")
                     .break()
                     .type("Muhammad&1Subhan")
                     .pause(750)
@@ -53,20 +53,18 @@ export default function HeroSection() {
                 getBeforeInit={(instance) => {
                   instance
                     .pause(5000)
-                    .type("Saya seorang Front-End Web Developer")
+                    .type("I am a Front-End Web Developer.")
                     .pause(250)
                     .delete(31)
                     .pause(200)
-                    .type("senang mempelajari hal baru")
+                    .type("I enjoy learning new things.")
                     .pause(250)
-                    .delete(27)
+                    .delete(28)
                     .pause(200)
-                    .type("berkomitmen pada tugas yang diberikan")
+                    .type("Committed to every task given.")
                     .pause(250)
-                    .delete(37)
+                    .delete(30)
                     .pause(200)
-                    .type("mudah beradaptasi")
-                    .pause(250);
                   return instance;
                 }}
               />

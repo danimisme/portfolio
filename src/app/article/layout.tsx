@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 
 // agar di‑bundle pada build time:
 export const metadata = {
-  title: "Artikel",
+  title: "Articles",
 };
 
 export default function ArticleLayout({ children }: { children: ReactNode }) {

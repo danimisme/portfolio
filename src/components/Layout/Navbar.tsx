@@ -97,15 +97,15 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navHome = [
-    { href: "/#", label: "Beranda", page: "home" },
-    { href: "#about", label: "Tentang Saya", page: "about" },
+    { href: "/#", label: "Home", page: "home" },
+    { href: "#about", label: "About Me", page: "about" },
     { href: "#portfolio", label: "Portfolio", page: "portfolio" },
     { href: "#contact", label: "Contact", page: "contact" },
     { href: "/article", label: "Article", page: "article" },
   ];
 
   const navGlobal = [
-    { href: "/#", label: "Beranda", page: "home" },
+    { href: "/#", label: "Home", page: "home" },
     { href: "/article", label: "Article", page: "article" },
   ];
 

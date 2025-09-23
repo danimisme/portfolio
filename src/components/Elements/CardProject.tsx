@@ -50,7 +50,7 @@ export default function CardProject({ project } : Props) {
         )}
       </h2>
       <p className="font-medium text-base text-secondary">
-        {desc.length > 50 ? `${desc.slice(0, 50)}... Lihat Selengkapnya` : desc}
+        {desc.length > 50 ? `${desc.slice(0, 50)}... Read more` : desc}
       </p>
     </div>
   );

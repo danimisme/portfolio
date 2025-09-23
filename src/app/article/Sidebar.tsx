@@ -23,7 +23,7 @@ export default function Sidebar({ articles }: SidebarProps) {
         className=" fixed top-16 left-4 z-30 bg-gray-200 dark:bg-darkgray p-2 rounded shadow dark:border dark:border-gray-300"
       >
           <div className="flex items-center gap-2 font-poppins">
-            <Menu size={20} className="dark:text-gray-300"/> <span className="font-poppins text-sm dark:text-gray-300">List Artikel</span>
+            <Menu size={20} className="dark:text-gray-300"/> <span className="font-poppins text-sm dark:text-gray-300">Article List</span>
           </div>
       </button>
         )}
@@ -39,7 +39,7 @@ export default function Sidebar({ articles }: SidebarProps) {
       >
         <div className={`mt-4 md:mt-8 lg:mt-12 sticky top-16 ${isOpen ? "opacity-100" : "opacity-0"}`}>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="font-bold dark:text-white text-lg">List Artikel</h2>
+            <h2 className="font-bold dark:text-white text-lg">Article List</h2>
             {isOpen && (
               <button
                 onClick={() => setIsOpen(!isOpen)}
