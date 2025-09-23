@@ -36,12 +36,13 @@ export default function PortFolioSection() {
             <h4 className="text-primary font-semibold text-lg md:text-xl mb-3">
               Portfolio
             </h4>
-            <h2 className="text-dark font-bold text-3xl mb-4 dark:text-white">
-              Project Terbaru
+            <h2 className="text-dark font-bold text-3xl mb-4 dark:text-white ">
+              <span className="bg-gradient-to-r from-cyan-500 via-blue-400 to-blue-500 text-transparent bg-clip-text">
+                My Projects
+              </span>
             </h2>
             <p className="text-medium font-medium text-secondary">
-              Dibawah ini merupakan beberapa project yang pernah saya buat untuk
-              mempraktikan apa yang telah saya pelajari.
+              Here are a few projects I’ve worked on to put my skills into practice and continue learning.
             </p>
           </div>
         </div>

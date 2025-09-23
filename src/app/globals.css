@@ -34,6 +34,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Enable smooth scrolling for anchor links and programmatic scrolls */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .container {
   margin: auto;
   padding: 16px;
@@ -72,11 +83,15 @@ body {
 
 .navbar-scrolled {
   position: fixed;
-  z-index: 50;
+  z-index: 9998; /* Higher than loading screen after it's minimized */
   background-color: rgba(255, 255, 255, 0.7); /* bg-white + opacity */
   transform: translateY(0);
   opacity: 1;
   backdrop-filter: blur(4px); /* backdrop-blur-sm */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 
   box-shadow:
     0 10px 15px -3px rgba(0, 0, 0, 0.1),
@@ -93,8 +108,8 @@ body {
   height: 2px;
   margin-top: 0.1rem;
   transition: all 0.5s ease-out;
-  background-color: #3b82f6; /* bg-primary */
   content: "";
+  @apply bg-gradient-to-br from-cyan-500 via-indigo-500 to-blue-500
 }
 
 .nav-link:hover::after,
@@ -104,8 +119,13 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #3b82f6; /* text-primary */
+  /* color: #3b82f6; */
   font-weight: 600; /* font-semibold */
+  background: linear-gradient(90deg, #06b6d4, #3b82f6, #5c80f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (min-width: 1024px) {
@@ -160,4 +180,199 @@ body {
 }
 .article-item:hover::after {
   width: 50%;
+}
+
+/* Loading Screen Animations */
+@keyframes loading-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes loading-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.4);
+  }
+}
+
+@keyframes loading-glow-light {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(37, 99, 235, 0.7), 0 0 60px rgba(37, 99, 235, 0.5);
+  }
+}
+
+@keyframes loading-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes loading-gradient-light {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes loading-fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loading-minimize {
+  0% {
+    transform: scale(1) translateY(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.8) translateY(20%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(0.1) translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes content-reveal {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading-float {
+  animation: loading-float 2s ease-in-out infinite;
+}
+
+.loading-glow {
+  animation: loading-glow 2s ease-in-out infinite;
+}
+
+/* Light mode glow effect */
+body:not(.dark) .loading-glow {
+  animation: loading-glow-light 2s ease-in-out infinite;
+}
+
+.loading-gradient {
+  background: linear-gradient(-45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981);
+  background-size: 400% 400%;
+  animation: loading-gradient 3s ease infinite;
+}
+
+/* Light mode gradient */
+.loading-gradient-light {
+  background: linear-gradient(-45deg, #dbeafe, #ffffff, #e0f2fe, #f0f9ff);
+  background-size: 400% 400%;
+  animation: loading-gradient-light 3s ease infinite;
+}
+
+.loading-fadeInUp {
+  animation: loading-fadeInUp 0.6s ease-out forwards;
+}
+
+.loading-minimize {
+  animation: loading-minimize 1.2s ease-in-out forwards;
+}
+
+.content-reveal {
+  animation: content-reveal 0.8s ease-out forwards;
+}
+
+/* Loading Screen Progress Bar Enhancement */
+.progress-bar-glow {
+  position: relative;
+  overflow: visible;
+}
+
+.progress-bar-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  filter: blur(4px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Light mode progress bar glow */
+body:not(.dark) .progress-bar-glow::after {
+  opacity: 0.5;
+  filter: blur(6px);
+}
+
+/* Prevent scroll during loading */
+.loading-active {
+  overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Loading screen container - prevent all scrolling */
+.loading-screen-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Smooth layer transitions */
+.main-content-layer {
+  position: relative;
+  z-index: 1;
+  background: inherit;
+}
+
+.loading-screen-layer {
+  position: fixed;
+  z-index: 9999;
+  background: inherit;
 }

@@ -8,6 +8,6 @@ export default function Article() {
     redirect(`/article/${articles[0].slug}`);
   }
 
-  // Fallback jika tidak ada artikel
-  return <div>Tidak ada artikel tersedia.</div>;
+  // Fallback if there are no articles
+  return <div>No articles available.</div>;
 }

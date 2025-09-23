@@ -12,18 +12,21 @@ export default function HeroSection() {
     animationAOS();
   });
   return (
-    <section id="home" className="lg:pt-30 md:pt-20 pt-16 dark:bg-dark ">
+    <section id="home" className="lg:pt-30 md:pt-20 pt-16 dark:bg-dark min-h-screen">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2 relative">
             <h1 className="block font-bold text-2xl md:text-3xl text-dark dark:text-white lg:text-4xl mt-4">
               <TypeIt
                 options={{
-                  speed: 100,
+                  speed: 50,
+                  deleteSpeed: 40,
+                  waitUntilVisible: true,
                 }}
                 getBeforeInit={(instance) => {
                   instance
-                    .type("Halo 👋, Saya")
+                    .pause(3000)
+                    .type("Hi 👋, my name is")
                     .break()
                     .type("Muhammad&1Subhan")
                     .pause(750)
@@ -46,24 +49,22 @@ export default function HeroSection() {
 
             <h2 className="font-medium text-secondary text-lg mb-5 lg:text-2xl mt-2">
               <TypeIt
-                options={{ loop: true }}
+                options={{ loop: true, speed: 50, deleteSpeed: 40, waitUntilVisible: true }}
                 getBeforeInit={(instance) => {
                   instance
                     .pause(5000)
-                    .type("Saya seorang Front-End Web Developer")
+                    .type("I am a Front-End Web Developer.")
                     .pause(250)
                     .delete(31)
                     .pause(200)
-                    .type("senang mempelajari hal baru")
+                    .type("I enjoy learning new things.")
                     .pause(250)
-                    .delete(27)
+                    .delete(28)
                     .pause(200)
-                    .type("berkomitmen pada tugas yang diberikan")
+                    .type("Committed to every task given.")
                     .pause(250)
-                    .delete(37)
+                    .delete(30)
                     .pause(200)
-                    .type("mudah beradaptasi")
-                    .pause(250);
                   return instance;
                 }}
               />

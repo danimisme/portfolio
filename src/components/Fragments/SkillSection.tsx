@@ -22,8 +22,8 @@ export default function SkillSection() {
   return (
     <section className=" py-16 dark:bg-dark">
       <div className="container">
-        <h2 className="text-3xl font-bold text-center text-primary">
-          My Skills
+        <h2 className="text-3xl font-bold text-center ">
+          <span className="bg-gradient-to-r from-cyan-500 via-blue-400 to-blue-500 text-transparent bg-clip-text">My Skills</span>
         </h2>
         <div className="flex flex-wrap mt-16 justify-center ">
           {dataSkills.map((skill) => (
