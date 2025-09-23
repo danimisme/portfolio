@@ -9,7 +9,8 @@ export default function ButtonUp() {
   useEffect(() => {
     const handleScroll = () => {
       const about = document.getElementById("about");
-      const { top } = about!.getBoundingClientRect();
+      if (!about) return;
+      const { top } = about.getBoundingClientRect();
       setIsShow(top < 100);
     };
     window.addEventListener("scroll", handleScroll);
@@ -22,7 +23,7 @@ export default function ButtonUp() {
       className={`bg-primary w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:opacity-80 hover:shadow-lg transition duration-300 ease-in-out animate-bounce fixed  bottom-5 right-5 shadow-md hover:animate-none ${
         isShow ? "block" : "hidden"
       }`}
-      onClick={() => window.scrollTo(0, 0)}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
     >
       <FontAwesomeIcon icon={faArrowUp} className="text-white" />
     </div>

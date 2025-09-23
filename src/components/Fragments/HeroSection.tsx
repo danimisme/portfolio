@@ -12,17 +12,20 @@ export default function HeroSection() {
     animationAOS();
   });
   return (
-    <section id="home" className="lg:pt-30 md:pt-20 pt-16 dark:bg-dark ">
+    <section id="home" className="lg:pt-30 md:pt-20 pt-16 dark:bg-dark min-h-screen">
       <div className="container">
         <div className="flex flex-wrap">
           <div className="w-full self-center px-4 lg:w-1/2 relative">
             <h1 className="block font-bold text-2xl md:text-3xl text-dark dark:text-white lg:text-4xl mt-4">
               <TypeIt
                 options={{
-                  speed: 100,
+                  speed: 50,
+                  deleteSpeed: 40,
+                  waitUntilVisible: true,
                 }}
                 getBeforeInit={(instance) => {
                   instance
+                    .pause(3000)
                     .type("Halo 👋, Saya")
                     .break()
                     .type("Muhammad&1Subhan")
@@ -46,7 +49,7 @@ export default function HeroSection() {
 
             <h2 className="font-medium text-secondary text-lg mb-5 lg:text-2xl mt-2">
               <TypeIt
-                options={{ loop: true }}
+                options={{ loop: true, speed: 50, deleteSpeed: 40, waitUntilVisible: true }}
                 getBeforeInit={(instance) => {
                   instance
                     .pause(5000)

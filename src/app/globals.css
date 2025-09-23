@@ -34,6 +34,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Enable smooth scrolling for anchor links and programmatic scrolls */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 .container {
   margin: auto;
   padding: 16px;
@@ -97,8 +108,8 @@ body {
   height: 2px;
   margin-top: 0.1rem;
   transition: all 0.5s ease-out;
-  background-color: #3b82f6; /* bg-primary */
   content: "";
+  @apply bg-gradient-to-br from-cyan-500 via-indigo-500 to-blue-500
 }
 
 .nav-link:hover::after,
@@ -108,8 +119,13 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-  color: #3b82f6; /* text-primary */
+  /* color: #3b82f6; */
   font-weight: 600; /* font-semibold */
+  background: linear-gradient(90deg, #06b6d4, #3b82f6, #5c80f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (min-width: 1024px) {

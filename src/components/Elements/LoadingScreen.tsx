@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/redux/store";
 import { setLoading } from "@/redux/slices/LoadingSlice";
+import TypeIt from "typeit-react";
 
 const LoadingScreen = () => {
   const dispatch = useDispatch();
@@ -171,12 +172,24 @@ const LoadingScreen = () => {
 
         {/* Nama Portfolio dengan Animation */}
         <div className="mb-6 px-4">
-          <h1 className={`text-3xl md:text-5xl font-bold mb-3 font-poppins drop-shadow-lg ${
+          <h1 className={`text-2xl md:text-3xl font-bold mb-3 font-poppins drop-shadow-lg ${
             darkMode 
               ? "text-white" 
               : "text-slate-800"
           }`}>
-            Dani
+            <TypeIt
+              options={{
+                speed: 50,
+                waitUntilVisible: true,
+              }}
+              getBeforeInit={(instance) => {
+                instance
+                  .type("Muhammad Subhan Ramdhani")
+                  .pause(100)
+                return instance;
+              }}
+            />
+
           </h1>
           <p className={`text-lg md:text-xl font-medium animate-pulse ${
             darkMode 
